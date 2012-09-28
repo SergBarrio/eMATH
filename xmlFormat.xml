@@ -1,0 +1,20 @@
+<puzzle1>
+	<question1>
+	    <measure>
+	        <note>A<tsig>1/8</tsig></note>
+	        <note>blank</note>
+	    </measure>
+	    
+	    <answer>
+	        <note>B</note><tsig>1/4</tsig>
+	    </answer>
+	</question1>
+	<question2>
+	    <text>How many quarter notes are there?</text>
+	    <answer>2</answer>
+	</question2>
+	<question3>
+	    <text>Identify the song.</text>
+	    <answer>Spongebob</answer>
+	</question3>
+</puzzle1>
