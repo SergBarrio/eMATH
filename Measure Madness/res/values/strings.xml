@@ -1,10 +1,11 @@
 <resources>
 
     <string name="app_name">Measure Madness</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_settings_2">Settings</string>
+    <string name="menu_settings_3">Settings</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_2">MainActivity</string>
+    <string name="title_activity_3">MainActivity</string>
 
 </resources>
