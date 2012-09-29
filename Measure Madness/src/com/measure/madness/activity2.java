@@ -7,32 +7,32 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.content.Intent;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class activity2 extends Activity implements OnClickListener {
 
 	Button buttonPlay;
+	MediaPlayer player;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_2);
         
-        buttonPlay = (Button)findViewById(R.id.button_play);
+        buttonPlay = (Button)findViewById(R.id.play);
         buttonPlay.setOnClickListener(this);
         
+        player = MediaPlayer.create(this, R.raw.battle);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        getMenuInflater().inflate(R.menu.activity_2, menu);
         return true;
     }
 
 	public void onClick(View v) {
-        Intent myIntent = new Intent(this, activity2.class);
 		if (v == buttonPlay) {
-			startActivityForResult(myIntent, 10);		
+			player.start();
 		}
 	}
 }
