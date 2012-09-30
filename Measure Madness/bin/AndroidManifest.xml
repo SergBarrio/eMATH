@@ -20,6 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name=".activity2"
+            android:label="@string/title_activity_2" >            
+        </activity>
+        <activity
+            android:name=".activity3"
+            android:label="@string/title_activity_3" >            
+        </activity>
+        
+    	<activity android:name=".level_1" />
+        <activity android:name=".level_2" />
+        <activity android:name=".level_3" />
+        <activity android:name=".level_4" />
+        
     </application>
 
 </manifest>
