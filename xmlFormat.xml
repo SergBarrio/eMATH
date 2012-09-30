@@ -1,20 +1,38 @@
-<puzzle1>
-	<question1>
+<puzzle>
+	<question>
+        <type>0</type>
 	    <measure>
-	        <note>A<tsig>1/8</tsig></note>
-	        <note>blank</note>
+            <tsig>
+                <numerator>4</numerator>
+                <denominator>4</denominator>
+            </tsig>
+	        <note>
+                <staffposition>1-9</staffposition>
+                <duration>1/8</duration>
+            </note>
+	        <note>
+                <staffposition>1-9</staffposition>
+                <duration>0</duration>
+            </note>
 	    </measure>
-	    
 	    <answer>
 	        <note>B</note><tsig>1/4</tsig>
 	    </answer>
-	</question1>
-	<question2>
+	</question>
+	<question>
+        <type>1</type>
 	    <text>How many quarter notes are there?</text>
 	    <answer>2</answer>
-	</question2>
-	<question3>
-	    <text>Identify the song.</text>
-	    <answer>Spongebob</answer>
-	</question3>
-</puzzle1>
+	</question>
+	<question>
+        <type>2</type>
+	    <text>Identify the song</text>
+        <choices>
+            <choice>song0</choice>
+            <choice>song1</choice>
+            <choice>song2</choice>
+            <choice>song3</choice>
+        </choice>
+        <answer>2</answer>
+	</question>
+</puzzle>
