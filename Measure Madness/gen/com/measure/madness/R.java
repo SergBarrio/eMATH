@@ -25,10 +25,16 @@ public final class R {
     public static final class id {
         public static final int button1=0x7f080004;
         public static final int button_play=0x7f080001;
-        public static final int menu_settings=0x7f080007;
-        public static final int menu_settings_2=0x7f080005;
-        public static final int menu_settings_3=0x7f080006;
+        public static final int editText1=0x7f08000a;
+        public static final int menu_settings=0x7f08000d;
+        public static final int menu_settings_2=0x7f08000b;
+        public static final int menu_settings_3=0x7f08000c;
         public static final int play=0x7f080000;
+        public static final int radio0=0x7f080006;
+        public static final int radio1=0x7f080007;
+        public static final int radio2=0x7f080008;
+        public static final int radio3=0x7f080009;
+        public static final int radioGroup1=0x7f080005;
         public static final int seekBar1=0x7f080002;
         public static final int textView1=0x7f080003;
     }
@@ -41,6 +47,8 @@ public final class R {
         public static final int level_3=0x7f030005;
         public static final int level_4=0x7f030006;
         public static final int puzzle_screen=0x7f030007;
+        public static final int question2=0x7f030008;
+        public static final int question3=0x7f030009;
     }
     public static final class menu {
         public static final int activity_2=0x7f070000;

@@ -34,6 +34,10 @@
             android:name=".puzzle_screen">            
         </activity>
         
+        <activity
+            android:name=".question2">            
+        </activity>
+        
     	<activity android:name=".level_1" />
         <activity android:name=".level_2" />
         <activity android:name=".level_3" />

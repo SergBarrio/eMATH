@@ -6,14 +6,15 @@
  */
 package com.measure.madness;
 
+import java.io.Serializable;
 import java.util.Vector;
 
-public class Measure {
+public class Measure implements Serializable {
 	
 	/* Member classes */
 	
 	// This class defines a time signature //
-	public class Tsig {
+	public class Tsig implements Serializable {
 		// Member variables //
 		private int numerator;
 		private int denominator;
@@ -45,13 +46,13 @@ public class Measure {
 	}
 	
 	// This class defines a note object //
-	public class Note {
+	public class Note implements Serializable {
 		// Member variables //
 		private double duration;
 		private int note;
 		
 		// Constructor //
-		public Note(double duration, int note) {
+		public Note(int note, double duration) {
 			this.duration = duration;
 			this.note = note;
 		}

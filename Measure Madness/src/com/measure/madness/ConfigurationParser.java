@@ -127,7 +127,7 @@ public class ConfigurationParser {
 	// Process the type tag //
 	private int readType(XmlPullParser parser) throws IOException, XmlPullParserException {
 	    parser.require(XmlPullParser.START_TAG, ns, "type");
-	    int type = readNum(parser);
+	    int type = readInt(parser);
 	    parser.require(XmlPullParser.END_TAG, ns, "type");
 	    return type;
 	}
@@ -204,7 +204,7 @@ public class ConfigurationParser {
 	// Process the answer tag for non-music questions //
 	private int readAnswer(XmlPullParser parser) throws IOException, XmlPullParserException {
 	    parser.require(XmlPullParser.START_TAG, ns, "answer");
-	    int answer = readNum(parser);
+	    int answer = readInt(parser);
 	    parser.require(XmlPullParser.END_TAG, ns, "answer");
 	    return answer;
 	}
@@ -236,7 +236,7 @@ public class ConfigurationParser {
 	// Process the time signature numerator //
 	private int readNumerator(XmlPullParser parser) throws IOException, XmlPullParserException {
 	    parser.require(XmlPullParser.START_TAG, ns, "numerator");
-	    int numerator = readNum(parser);
+	    int numerator = readInt(parser);
 	    parser.require(XmlPullParser.END_TAG, ns, "numerator");
 	    return numerator;
 	}
@@ -244,7 +244,7 @@ public class ConfigurationParser {
 	// Process the time signature denominator //
 	private int readDenominator(XmlPullParser parser) throws IOException, XmlPullParserException {
 	    parser.require(XmlPullParser.START_TAG, ns, "denominator");
-	    int denominator = readNum(parser);
+	    int denominator = readInt(parser);
 	    parser.require(XmlPullParser.END_TAG, ns, "denominator");
 	    return denominator;
 	}
@@ -254,7 +254,7 @@ public class ConfigurationParser {
 	    parser.require(XmlPullParser.START_TAG, ns, "note");
 	    
 	    int staffPosition = -1;
-	    int duration = -1;
+	    double duration = -1.0;
 	    Measure measure = new Measure();
 	    
 	    while (parser.next() != XmlPullParser.END_TAG) {
@@ -276,15 +276,15 @@ public class ConfigurationParser {
 	// Process the note position //
 	private int readStaffPosition(XmlPullParser parser) throws IOException, XmlPullParserException {
 	    parser.require(XmlPullParser.START_TAG, ns, "staffposition");
-	    int position = readNum(parser);
+	    int position = readInt(parser);
 	    parser.require(XmlPullParser.END_TAG, ns, "staffposition");
 	    return position;
 	}
 	
 	// Process the note duration //
-	private int readDuration(XmlPullParser parser) throws IOException, XmlPullParserException {
+	private double readDuration(XmlPullParser parser) throws IOException, XmlPullParserException {
 	    parser.require(XmlPullParser.START_TAG, ns, "duration");
-	    int duration = readNum(parser);
+	    double duration = readDouble(parser);
 	    parser.require(XmlPullParser.END_TAG, ns, "duration");
 	    return duration;
 	}
@@ -326,10 +326,19 @@ public class ConfigurationParser {
 	}
 	
 	// Extract number values //
-	private int readNum(XmlPullParser parser) throws IOException, XmlPullParserException {
+	private int readInt(XmlPullParser parser) throws IOException, XmlPullParserException {
 	    int result = -1;
 	    if (parser.next() == XmlPullParser.TEXT) {
 	        result = Integer.parseInt(parser.getText());
+	        parser.nextTag();
+	    }
+	    return result;
+	}
+	
+	private double readDouble(XmlPullParser parser) throws IOException, XmlPullParserException {
+	    double result = -1.0;
+	    if (parser.next() == XmlPullParser.TEXT) {
+	        result = Double.parseDouble(parser.getText());
 	        parser.nextTag();
 	    }
 	    return result;

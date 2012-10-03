@@ -8,11 +8,13 @@
 
 package com.measure.madness;
 
+import java.io.Serializable;
 import java.util.Vector;
 
 import com.measure.madness.Measure.Note;
 
-public class Star {
+@SuppressWarnings("serial")
+public class Star implements Serializable {
 	
 	// Member variables //
 	private Boolean active;
