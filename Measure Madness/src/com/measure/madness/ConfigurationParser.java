@@ -25,7 +25,7 @@ public class ConfigurationParser {
 	private static final String ns = null;
 	
 	// Parse the configuration file //
-	public List parse(InputStream config) throws XmlPullParserException, IOException {
+	public List<List<Star>> parse(InputStream config) throws XmlPullParserException, IOException {
 		try {
 			XmlPullParser parser = Xml.newPullParser();
 			parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
@@ -37,8 +37,8 @@ public class ConfigurationParser {
 		}
 	}
 	
-	private List readConfig(XmlPullParser parser) throws XmlPullParserException, IOException {
-	    List puzzles = new ArrayList();
+	private List<List<Star>> readConfig(XmlPullParser parser) throws XmlPullParserException, IOException {
+	    List<List<Star>> puzzles = new ArrayList<List<Star>>();
 
 	    parser.require(XmlPullParser.START_TAG, ns, "config");
 	    while (parser.next() != XmlPullParser.END_TAG) {
@@ -251,7 +251,7 @@ public class ConfigurationParser {
 	
 	// Process the note tag //
 	private Note readNote(XmlPullParser parser) throws XmlPullParserException, IOException {
-	    parser.require(XmlPullParser.START_TAG, ns, "tsig");
+	    parser.require(XmlPullParser.START_TAG, ns, "note");
 	    
 	    int staffPosition = -1;
 	    int duration = -1;
