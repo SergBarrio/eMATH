@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <puzzle>
+        <question>
+            <type>0</type>
+            <measure>
+                <tsig>
+                    <numerator>4</numerator>
+                    <denominator>4</denominator>
+                </tsig>
+                <note>
+                    <staffposition>3</staffposition>
+                    <duration>2</duration>
+                </note>
+                <note>
+                    <staffposition>5</staffposition>
+                    <duration>0</duration>
+                </note>
+            </measure>
+            <answer>
+                <staffposition>B</staffposition>
+                <duration>2</duration>
+            </answer>
+        </question>
+        <question>
+            <type>1</type>
+            <text>How many quarter notes are there?</text>
+            <answer>4</answer>
+        </question>
+        <question>
+            <type>2</type>
+            <text>Identify the song.</text>
+            <choices>
+                <choice>song0</choice>
+                <choice>song1</choice>
+                <choice>song2</choice>
+                <choice>song3</choice>
+            </choices>
+            <answer>2</answer>
+        </question>
+    </puzzle>
+</config>
