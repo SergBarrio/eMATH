@@ -36,8 +36,15 @@
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onClickButton"
-            android:text="Button" />
+            android:onClick="onClickQuestion2"
+            android:text="Question 2" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickQuestion3"
+            android:text="Question 3" />
 
     </LinearLayout>
 

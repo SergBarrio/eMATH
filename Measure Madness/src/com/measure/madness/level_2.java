@@ -24,13 +24,13 @@ public class level_2 extends Activity {
         
     }
 
-	public void onClickButton(View v) {
+    public void onClickQuestion2(View v) {
 		
-		Intent intent = new Intent(this,puzzle_screen.class);
+		/*Intent intent = new Intent(this,puzzle_screen.class);
 		intent.putExtra("text", "News for you!");
-		startActivity(intent);
+		startActivity(intent);*/
 		
-		/*
+		
 		int mExternalStorageAvailable = 0;
         int mExternalStorageWriteable = 0;
         String state = Environment.getExternalStorageState();
@@ -93,12 +93,17 @@ public class level_2 extends Activity {
         }
         
         if (star != null) {
-			Intent intent1 = new Intent(this,question2.class);
-			Bundle bundle = new Bundle();
-			bundle.putSerializable("obj", star);
-			intent1.putExtra("obj", bundle);
-			startActivity(intent1);
+			//Intent intent1 = new Intent(this,MultipleChoiceQuestion.class);
+			//Bundle bundle = new Bundle();
+			//bundle.putSerializable("obj", star);
+			//intent1.putExtra("obj", bundle);
+			//startActivity(intent1);
         }
-        */
+        
 	}
+
+    public void onClickQuestion3(View v) {
+    	//Intent intent = new Intent(this,FillInQuestion.class);
+    	//startActivity(intent);
+    }
 }
