@@ -38,6 +38,7 @@ public class Star implements Serializable {
 	public Star(Boolean active, int questionType, String question, Vector<String> answerChoices, int answer) {
 		this.active = active;
 		this.questionType = questionType;
+		this.question = question;
 		this.answerChoices = answerChoices;
 		this.answer = answer;
 	}
@@ -45,6 +46,7 @@ public class Star implements Serializable {
 	public Star(Boolean active, int questionType, String question, int answer) {
 		this.active = active;
 		this.questionType = questionType;
+		this.question = question;
 		this.answer = answer;
 	}
 	
@@ -61,10 +63,10 @@ public class Star implements Serializable {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
-	public int getTextQuestion() {
+	public int getQuestionType() {
 		return questionType;
 	}
-	public void setTextQuestion(int type) {
+	public void setQuestionType(int type) {
 		this.questionType = type;
 	}
 	public Vector<Note> getMusicAnswer() {

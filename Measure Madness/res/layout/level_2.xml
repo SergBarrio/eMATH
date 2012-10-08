@@ -7,45 +7,28 @@
 
     <!-- Screen Design for Photos -->
 
-    <LinearLayout
+    <Button
+        android:id="@+id/puzzle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_marginTop="10dp"
+        android:onClick="onClickPuzzle1"
+        android:text="Puzzle #1" />
 
-        <SeekBar
-            android:id="@+id/seekBar1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/puzzle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="onClickPuzzle2"
+        android:text="Puzzle #2" />
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="question 2" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:text="answer 2" >
-
-            <requestFocus />
-        </EditText>
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickQuestion2"
-            android:text="Question 2" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClickQuestion3"
-            android:text="Question 3" />
-
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/puzzle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="onClickPuzzle3"
+        android:text="Puzzle #3" />
+    
 </LinearLayout>

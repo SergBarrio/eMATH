@@ -9,7 +9,6 @@ package com.measure.madness;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -25,7 +24,7 @@ public class ConfigurationParser {
 	private static final String ns = null;
 	
 	// Parse the configuration file //
-	public List<List<Star>> parse(InputStream config) throws XmlPullParserException, IOException {
+	public ArrayList<ArrayList<Star>> parse(InputStream config) throws XmlPullParserException, IOException {
 		try {
 			XmlPullParser parser = Xml.newPullParser();
 			parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
@@ -37,8 +36,8 @@ public class ConfigurationParser {
 		}
 	}
 	
-	private List<List<Star>> readConfig(XmlPullParser parser) throws XmlPullParserException, IOException {
-	    List<List<Star>> puzzles = new ArrayList<List<Star>>();
+	private ArrayList<ArrayList<Star>> readConfig(XmlPullParser parser) throws XmlPullParserException, IOException {
+	    ArrayList<ArrayList<Star>> puzzles = new ArrayList<ArrayList<Star>>();
 
 	    parser.require(XmlPullParser.START_TAG, ns, "config");
 	    while (parser.next() != XmlPullParser.END_TAG) {
@@ -57,8 +56,8 @@ public class ConfigurationParser {
 	}
 	
 	// Process the puzzle tag //
-	private List<Star> readPuzzle(XmlPullParser parser) throws XmlPullParserException, IOException {
-		List<Star> stars = new ArrayList<Star>();
+	private ArrayList<Star> readPuzzle(XmlPullParser parser) throws XmlPullParserException, IOException {
+		ArrayList<Star> stars = new ArrayList<Star>();
 		
 		parser.require(XmlPullParser.START_TAG, ns, "puzzle");
 	    while (parser.next() != XmlPullParser.END_TAG) {
