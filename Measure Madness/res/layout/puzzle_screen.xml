@@ -19,27 +19,41 @@
 	            android:text="Question #1"
 	            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-	        <ScrollView
-	            android:id="@+id/scrollView2"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginBottom="25dp" >
-
-	            <LinearLayout
-	                android:layout_width="match_parent"
-	                android:layout_height="match_parent" >
-
-	                <GridView
-	                    android:id="@+id/gridView1"
-	                    android:layout_width="match_parent"
-	                    android:layout_height="134dp"
-	                    android:numColumns="3" >
-	                </GridView>
-
-	            </LinearLayout>
-	        </ScrollView>
-
 	        <LinearLayout
+	            android:id="@+id/musiclayout"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content" >
+	            
+	            <View
+	                android:id="@+id/timesig"
+	                android:layout_width="15dp"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="15dp"
+	                android:background="#ffffff"
+	                />
+
+	            
+
+	            <Gallery
+	                android:id="@+id/gallery1"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dp"
+	                android:layout_marginLeft="-290dp"
+	                android:layout_weight="1" />
+
+	        </LinearLayout>
+
+	        <Spinner
+	            android:id="@+id/spinner1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_horizontal"
+	            android:entries="@array/music_answers"
+	            android:prompt="@string/spinner_prompt"
+	            android:layout_weight="1" />
+
+			<LinearLayout
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:gravity="right" >

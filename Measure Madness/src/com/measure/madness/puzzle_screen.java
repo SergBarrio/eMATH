@@ -6,26 +6,48 @@
 package com.measure.madness;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.game.logic.GameMethods;
+
 import android.app.Activity;
-import android.content.Intent;
+import android.content.Context;
+import android.database.DataSetObserver;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.GridView;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
+import android.widget.Gallery;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.SimpleExpandableListAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class puzzle_screen extends Activity {
 	
+	final String NAME = "name";
+    final String IMAGE = "image";
 	TextView text;
-	GridView gridView;
+	LinearLayout linearLayout;
+	Gallery galleryView;
 	MediaPlayer player;
 	private int solved = 0;
 	private EditText userAnswer;
+	Spinner spinner;
+	private final double[] noteDurations = {1.0,0.5,-0.5,0.25,-0.25,0.75,
+			-0.75,0.125,-0.125,0.375,0.0625,-0.0625,0.1875,0.03125,-0.03125,
+			0.09375,0.015625,-0.015625,0.046875};
 	private ArrayList<Star> puzzle = new ArrayList<Star>();
 	private GameMethods game = new GameMethods();
 	
@@ -34,18 +56,33 @@ public class puzzle_screen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.puzzle_screen);
-        
+        final LayoutInflater inflater = (LayoutInflater) this
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        		
         // get the puzzle from the calling activity
         puzzle = (ArrayList<Star>)getIntent().getExtras().getSerializable("puzzle");
- 
-		gridView = (GridView) findViewById(R.id.gridView1);
-		
-		// set up the music representation with a GridView. Pass all the measures that make up
-		// the music question to the MusicAdapter object, which populates the GridView.
-		for (int i=0; i<puzzle.get(0).getSheetMusic().size(); i++) {
-			gridView.setAdapter(new MusicAdapter(this, puzzle.get(0).getSheetMusic().get(i).getMeasure()));
-		}
         
+        // Set up time signature
+        linearLayout = (LinearLayout) findViewById(R.id.musiclayout);
+        
+        View view = findViewById(R.id.timesig);
+        view = inflater.inflate(R.layout.time_signature_view, null);
+        
+        TextView timesig = (TextView) view.findViewById(R.id.numerator);
+        timesig.setText(String.valueOf(puzzle.get(0).getSheetMusic().get(0).getTimeSignature().getNumerator()));
+        timesig = (TextView) view.findViewById(R.id.denominator);
+        timesig.setText(String.valueOf(puzzle.get(0).getSheetMusic().get(0).getTimeSignature().getDenominator()));
+        
+        linearLayout.addView(view, 0);
+ 
+        // set up the music representation with a galleryView. Pass all the measures that make up
+     	// the music question to the MusicAdapter object, which populates the galleryView.
+		galleryView = (Gallery) findViewById(R.id.gallery1);
+		
+		for (int i=0; i<puzzle.get(0).getSheetMusic().size(); i++) {
+			galleryView.setAdapter(new MusicAdapter(this, puzzle.get(0).getSheetMusic().get(i).getMeasure()));
+		}
+		
 		// Media player for music sample
         player = MediaPlayer.create(this, R.raw.battle);
         
@@ -66,6 +103,65 @@ public class puzzle_screen extends Activity {
         // User answer from input field
         userAnswer = (EditText)findViewById(R.id.answer);
     }
+	
+	// Determine which image to use, based on note duration
+	public Object getImage(double note) {
+		if (note == 1.0) {
+			return R.drawable.note1;
+		} else if (note == 0.5) {
+			return R.drawable.note1_2;
+		} else if (note == -0.5) {
+			return R.drawable.rest1_2;
+		} else if (note == 0.25) {
+			return R.drawable.note1_4;
+		} else if (note == -0.25) {
+			return R.drawable.rest1_4;
+		} else if (note == 0.75) {
+			return R.drawable.note3_4;
+		} else if (note == 0.125) {
+			return R.drawable.note1_8;
+		} else if (note == -0.125) {
+			return R.drawable.rest1_8;
+		} else if (note == 0.375) {
+			return R.drawable.note3_8;
+		} else if (note == 0.0625) {
+			return R.drawable.note1_16;
+		} else if (note == -0.0625) {
+			return R.drawable.rest1_16;
+		} else if (note == 0.1875) {
+			return R.drawable.note3_16;
+		} else if (note == 0.03125) {
+			return R.drawable.note1_32;
+		} else if (note == -0.03125) {
+			return R.drawable.rest1_32;
+		} else if (note == 0.09375) {
+			return R.drawable.note3_32;
+		} else if (note == 0.015625) {
+			return R.drawable.note1_64;
+		} else if (note == -0.015625) {
+			return R.drawable.rest1_64;
+		} else if (note == 0.046875) {
+			return R.drawable.note3_64;
+		} else if (note == 0.0) {
+			return R.drawable.ic_action_search;
+		} else {
+			return R.drawable.ic_launcher;
+		}
+	}
+	
+	// add items into spinner dynamically
+	  public void addItemsOnSpinner() {
+	 
+		spinner = (Spinner) findViewById(R.id.spinner1);
+		List<String> list = new ArrayList<String>();
+		list.add("list 1");
+		list.add("list 2");
+		list.add("list 3");
+		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+			android.R.layout.simple_spinner_item, list);
+		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(dataAdapter);
+	  }
 	
 	// Play music sample if play button is enabled
 	public void onClickPlay(View v) {

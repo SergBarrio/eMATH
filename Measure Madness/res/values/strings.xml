@@ -7,5 +7,11 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_2">MainActivity</string>
     <string name="title_activity_3">MainActivity</string>
+    
+    <string name="spinner_prompt">Select a note</string>
+    
+    <string-array name="music_answers">
+        <item>music_view</item>
+    </string-array>
 
 </resources>

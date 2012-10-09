@@ -49,11 +49,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		
 		if (v == buttonPlay) {
-			player.start();
+			//player.start();
 	        Intent playGame = new Intent(this, activity2.class);
 	        ArrayList<ArrayList<Star>> gameConfiguration = callParser();
 	        playGame.putExtra("configuration", gameConfiguration);
-	        System.out.println(gameConfiguration.size());
 			startActivityForResult(playGame, 10);		
 		}
 	}
@@ -97,7 +96,7 @@ public class MainActivity extends Activity implements OnClickListener {
         if (mExternalStorageAvailable == 1) {
         	File directory = Environment.getExternalStorageDirectory();
         	
-        	File file = new File(directory + "/test.xml");
+        	File file = new File(directory + "/test2.xml");
         	
         	InputStream in;
         	try {

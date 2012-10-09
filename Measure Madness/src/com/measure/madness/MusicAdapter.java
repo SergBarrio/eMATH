@@ -31,38 +31,38 @@ public class MusicAdapter extends BaseAdapter {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	 
-			View gridView;
+			View view;
 	 
 			if (convertView == null) {
 	 
-				gridView = new View(context);
+				view = new View(context);
 	 
-				// get layout from mobile.xml
-				gridView = inflater.inflate(R.layout.music_view, null);
+				// get layout from music_view.xml
+				view = inflater.inflate(R.layout.music_view, null);
 				ImageView imageView;
 				Note note;
 				
 				// set note into textview
-				TextView textView = (TextView) gridView
+				TextView textView = (TextView) view
 						.findViewById(R.id.note);
 				textView.setText(String.valueOf(noteValues.get(position).getNote()));
 	 
 				// set image based on proper note
-				imageView = (ImageView) gridView
+				imageView = (ImageView) view
 						.findViewById(R.id.noteImage);
 				note = noteValues.get(position);
 				setImage(imageView,note);
 
 	 
 			} else {
-				gridView = (View) convertView;
+				view = (View) convertView;
 			}
 	 
-			return gridView;
+			return view;
 	}
 	
 	// Determine which image to use, based on note duration
-	private void setImage(ImageView imageView, Note note) {
+	public static void setImage(ImageView imageView, Note note) {
 		if (note.getDuration() == 1.0) {
 			imageView.setImageResource(R.drawable.note1);
 		} else if (note.getDuration() == 0.5) {
