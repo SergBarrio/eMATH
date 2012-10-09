@@ -83,6 +83,7 @@ public class puzzle_screen extends Activity {
 			galleryView.setAdapter(new MusicAdapter(this, puzzle.get(0).getSheetMusic().get(i).getMeasure()));
 		}
 		
+		String midi = puzzle.get(0).getMidiFileName();
 		// Media player for music sample
         player = MediaPlayer.create(this, R.raw.battle);
         

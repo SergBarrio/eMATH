@@ -81,6 +81,7 @@ public class ConfigurationParser {
 	    
 	    Boolean active = false;
 	    int questionType = -1;
+	    String midi = "";
 	    Vector<Measure> music = new Vector<Measure>();
 	    String question = "";
 	    Vector<Note> musicAnswer = new Vector<Note>();
@@ -96,6 +97,8 @@ public class ConfigurationParser {
 	        	questionType = readType(parser);
 	        } else if (name.equals("measure")) {
 	            music.add(readMeasure(parser));
+	        } else if (name.equals("midi")) {
+	            midi = readMidi(parser);
 	        } else if (name.equals("text")) {
 	        	question = readTextQuestion(parser);
 	        } else if (name.equals("answer")) {
@@ -113,7 +116,7 @@ public class ConfigurationParser {
 	    
 	    // Return Star object based on type of question //
 	    if (questionType == 0) {
-	    	return new Star(active,questionType,music,musicAnswer);
+	    	return new Star(active,questionType,midi,music,musicAnswer);
 	    } else if (questionType ==1) {
 	    	return new Star(active,questionType,question,choices,answer);
 	    } else if (questionType ==2) {
@@ -129,6 +132,14 @@ public class ConfigurationParser {
 	    int type = readInt(parser);
 	    parser.require(XmlPullParser.END_TAG, ns, "type");
 	    return type;
+	}
+	
+	// Process the type tag //
+	private String readMidi(XmlPullParser parser) throws IOException, XmlPullParserException {
+	    parser.require(XmlPullParser.START_TAG, ns, "midi");
+	    String midi = readText(parser);
+	    parser.require(XmlPullParser.END_TAG, ns, "midi");
+	    return midi;
 	}
 	
 	// Process the measure tag //
@@ -252,7 +263,7 @@ public class ConfigurationParser {
 	private Note readNote(XmlPullParser parser) throws XmlPullParserException, IOException {
 	    parser.require(XmlPullParser.START_TAG, ns, "note");
 	    
-	    int staffPosition = -1;
+	    String staffPosition = "";
 	    double duration = -1.0;
 	    Measure measure = new Measure();
 	    
@@ -273,9 +284,9 @@ public class ConfigurationParser {
 	}
 	
 	// Process the note position //
-	private int readStaffPosition(XmlPullParser parser) throws IOException, XmlPullParserException {
+	private String readStaffPosition(XmlPullParser parser) throws IOException, XmlPullParserException {
 	    parser.require(XmlPullParser.START_TAG, ns, "staffposition");
-	    int position = readInt(parser);
+	    String position = readText(parser);
 	    parser.require(XmlPullParser.END_TAG, ns, "staffposition");
 	    return position;
 	}

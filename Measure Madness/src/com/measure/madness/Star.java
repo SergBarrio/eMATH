@@ -18,6 +18,7 @@ public class Star implements Serializable {
 	
 	// Member variables //
 	private Boolean active;
+	private String midiFileName;
 	private int questionType;
 	private String question;
 	private Vector<String> answerChoices = new Vector<String>();
@@ -28,9 +29,10 @@ public class Star implements Serializable {
 	// Constructors //
 	public Star() {}
 	
-	public Star(Boolean active, int questionType, Vector<Measure> sheetMusic, Vector<Note> musicAnswer) {
+	public Star(Boolean active, int questionType, String midi, Vector<Measure> sheetMusic, Vector<Note> musicAnswer) {
 		this.active = active;
 		this.questionType = questionType;
+		this.midiFileName = midi;
 		this.sheetMusic = sheetMusic;
 		this.musicAnswer = musicAnswer;
 	}
@@ -51,6 +53,13 @@ public class Star implements Serializable {
 	}
 	
 	// Getters and Setters for member variables //
+	public String getMidiFileName() {
+		return midiFileName;
+	}
+
+	public void setMidiFileName(String midiFileName) {
+		this.midiFileName = midiFileName;
+	}
 	public Vector<Measure> getSheetMusic() {
 		return sheetMusic;
 	}

@@ -49,10 +49,10 @@ public class Measure implements Serializable {
 	public class Note implements Serializable {
 		// Member variables //
 		private double duration;
-		private int note;
+		private String note;
 		
 		// Constructor //
-		public Note(int note, double duration) {
+		public Note(String note, double duration) {
 			this.duration = duration;
 			this.note = note;
 		}
@@ -64,10 +64,10 @@ public class Measure implements Serializable {
 		public void setDuration(double duration) {
 			this.duration = duration;
 		}
-		public int getNote() {
+		public String getNote() {
 			return note;
 		}
-		public void setNote(int note) {
+		public void setNote(String note) {
 			this.note = note;
 		}
 	}
@@ -86,6 +86,7 @@ public class Measure implements Serializable {
 	}
 	
 	// Getters and Setters for member variables //
+
 	public Tsig getTimeSignature() {
 		return timeSignature;
 	}
