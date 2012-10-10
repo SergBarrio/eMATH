@@ -17,6 +17,7 @@ import android.content.Context;
 import android.database.DataSetObserver;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,9 +84,13 @@ public class puzzle_screen extends Activity {
 			galleryView.setAdapter(new MusicAdapter(this, puzzle.get(0).getSheetMusic().get(i).getMeasure()));
 		}
 		
-		String midi = puzzle.get(0).getMidiFileName();
+		addItemsOnSpinner();
+		
+		String midistring = puzzle.get(0).getMidiFileName();
+		midistring = midistring.substring(0, midistring.length() - 4); //chop off ".mid"
+		Uri midi = Uri.parse( "android.resource://" + getPackageName() + "/raw/" + midistring );
 		// Media player for music sample
-        player = MediaPlayer.create(this, R.raw.battle);
+        player = MediaPlayer.create(this, midi);
         
         // Question 1 text
         TextView question = (TextView)findViewById(R.id.question1);
@@ -155,9 +160,13 @@ public class puzzle_screen extends Activity {
 	 
 		spinner = (Spinner) findViewById(R.id.spinner1);
 		List<String> list = new ArrayList<String>();
-		list.add("list 1");
-		list.add("list 2");
-		list.add("list 3");
+		list.add("Whole note");
+		list.add("1/2");
+		list.add("1/4");
+		list.add("1/8");
+		list.add("1/16");
+		list.add("1/32");
+		list.add("1/64");
 		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
 			android.R.layout.simple_spinner_item, list);
 		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

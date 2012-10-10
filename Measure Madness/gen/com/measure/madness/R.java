@@ -36,13 +36,14 @@ public final class R {
         public static final int note3_4=0x7f020013;
         public static final int note3_64=0x7f020014;
         public static final int note3_8=0x7f020015;
-        public static final int rest1=0x7f020016;
-        public static final int rest1_16=0x7f020017;
-        public static final int rest1_2=0x7f020018;
-        public static final int rest1_32=0x7f020019;
-        public static final int rest1_4=0x7f02001a;
-        public static final int rest1_64=0x7f02001b;
-        public static final int rest1_8=0x7f02001c;
+        public static final int qnode=0x7f020016;
+        public static final int rest1=0x7f020017;
+        public static final int rest1_16=0x7f020018;
+        public static final int rest1_2=0x7f020019;
+        public static final int rest1_32=0x7f02001a;
+        public static final int rest1_4=0x7f02001b;
+        public static final int rest1_64=0x7f02001c;
+        public static final int rest1_8=0x7f02001d;
     }
     public static final class id {
         public static final int answer=0x7f09001a;
@@ -98,6 +99,7 @@ public final class R {
     }
     public static final class raw {
         public static final int battle=0x7f040000;
+        public static final int supermario=0x7f040001;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

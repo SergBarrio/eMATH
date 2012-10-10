@@ -96,7 +96,7 @@ public class MainActivity extends Activity implements OnClickListener {
         if (mExternalStorageAvailable == 1) {
         	File directory = Environment.getExternalStorageDirectory();
         	
-        	File file = new File(directory + "/test2.xml");
+        	File file = new File(directory + "/test.xml");
         	
         	InputStream in;
         	try {

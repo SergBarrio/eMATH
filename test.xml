@@ -1,42 +1,281 @@
-<?xml version="1.0" encoding="utf-8"?>
 <config>
-    <puzzle>
+    <!-- Super Mario-->
+	<puzzle>
         <question>
             <type>0</type>
+            <midi>supermario.mid</midi>
             <measure>
                 <tsig>
                     <numerator>4</numerator>
                     <denominator>4</denominator>
                 </tsig>
                 <note>
-                    <staffposition>3</staffposition>
-                    <duration>2</duration>
+                    <staffposition>E</staffposition>
+                    <duration>0.0625</duration>
                 </note>
                 <note>
-                    <staffposition>5</staffposition>
-                    <duration>0</duration>
+                    <staffposition>F</staffposition>
+                    <duration>0.125</duration>
+                </note>
+                <note>
+                    <staffposition>G</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+                <note>
+                    <staffposition></staffposition>
+                    <duration>-0.0625</duration>
+                </note>
+                <note>
+                    <staffposition>B</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+                <note>
+                    <staffposition>A</staffposition>
+                    <duration>0.125</duration>
+                </note>
+                <note>
+                    <staffposition>D</staffposition>
+                    <duration>0.125</duration>
+                </note>
+                <note>
+                    <staffposition></staffposition>
+                    <duration>-0.125</duration>
+                </note>
+                <note>
+                    <staffposition>C</staffposition>
+                    <duration>0.0</duration>
+                </note>
+                <note>
+                    <staffposition></staffposition>
+                    <duration>-0.125</duration>
                 </note>
             </measure>
             <answer>
-                <staffposition>B</staffposition>
-                <duration>2</duration>
+                <note>
+                    <staffposition>A</staffposition>
+                    <duration>0.125</duration>
+                </note>
             </answer>
         </question>
         <question>
             <type>1</type>
-            <text>How many quarter notes are there?</text>
-            <answer>4</answer>
+            <text>Identify the song</text>
+            <choices>
+                <choice>Super Mario</choice>
+                <choice>Super men</choice>
+                <choice>Baby</choice>
+                <choice>Harry Porter</choice>
+            </choices>
+            <answer>2</answer>
         </question>
         <question>
             <type>2</type>
-            <text>Identify the song.</text>
+            <text>How many quarter notes are there?</text>            
+            <answer>4</answer>
+        </question>
+    </puzzle>
+	
+	<!-- Harry Porter-->
+	<puzzle>
+        <question>
+            <type>0</type>
+            <midi>Harry Porter.mid</midi>
+            <measure>
+                <tsig>
+                    <numerator>4</numerator>
+                    <denominator>4</denominator>
+                </tsig>
+                <note>
+                    <staffposition></staffposition>
+                    <duration>-0.0625</duration>
+                </note>
+                <note>
+                    <staffposition>C</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>E</staffposition>
+                    <duration>0.0</duration>
+                </note>
+				<note>
+                    <staffposition>G</staffposition>
+                    <duration>0.03125</duration>
+                </note>
+				<note>
+                    <staffposition>F#</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>E</staffposition>
+                    <duration>0.0125</duration>
+                </note>
+				<note>
+                    <staffposition>B</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>A</staffposition>
+                    <duration>0.1875</duration>
+                </note>
+				<note>
+                    <staffposition>F#</staffposition>
+                    <duration>0.1875</duration>
+                </note>
+				<note>
+                    <staffposition>E</staffposition>
+                    <duration>0.09375</duration>
+                </note>
+				<note>
+                    <staffposition>G</staffposition>
+                    <duration>0.03625</duration>
+                </note>
+            </measure>
+			<measure>
+				<tsig>
+                    <numerator>4</numerator>
+                    <denominator>4</denominator>
+                </tsig>
+				<note>
+                    <staffposition>F#</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>D#</staffposition>
+                    <duration>0.125</duration>
+                </note>
+				<note>
+                    <staffposition>F#</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>B</staffposition>
+                    <duration>0.25</duration>
+                </note>
+			</measure>
+            <answer>
+                <note>
+                    <staffposition>E</staffposition>
+                    <duration>0.09375</duration>
+                </note>
+            </answer>
+        </question>
+        <question>
+            <type>1</type>
+            <text>Identify the song from the movie</text>
             <choices>
-                <choice>song0</choice>
-                <choice>song1</choice>
-                <choice>song2</choice>
-                <choice>song3</choice>
+                <choice>Pirates of the Carbbean</choice>
+                <choice>Start War</choice>
+                <choice>Harry Porter</choice>
+                <choice>yankee doodle</choice>
             </choices>
-            <answer>2</answer>
+            <answer>3</answer>
+        </question>
+        <question>
+            <type>2</type>
+            <text>How many 1/16 notes are there?</text>            
+            <answer>5</answer>
+        </question>
+    </puzzle>
+	
+	<!--// puzzle3 Nyan Cat -->
+	<puzzle>
+        <question>
+            <type>0</type>
+            <midi>Nyan Cat.mid</midi>
+            <measure>
+                <tsig>
+                    <numerator>4</numerator>
+                    <denominator>4</denominator>
+                </tsig>
+                <note>
+                    <staffposition></staffposition>
+                    <duration>-0.0625</duration>
+                </note>
+                <note>
+                    <staffposition>C</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>E</staffposition>
+                    <duration>0.0</duration>
+                </note>
+				<note>
+                    <staffposition>G</staffposition>
+                    <duration>0.03125</duration>
+                </note>
+				<note>
+                    <staffposition>F#</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>E</staffposition>
+                    <duration>0.0125</duration>
+                </note>
+				<note>
+                    <staffposition>B</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>A</staffposition>
+                    <duration>0.1875</duration>
+                </note>
+				<note>
+                    <staffposition>F#</staffposition>
+                    <duration>0.1875</duration>
+                </note>
+				<note>
+                    <staffposition>E</staffposition>
+                    <duration>0.09375</duration>
+                </note>
+				<note>
+                    <staffposition>G</staffposition>
+                    <duration>0.03625</duration>
+                </note>
+            </measure>
+			<measure>
+				<tsig>
+                    <numerator>4</numerator>
+                    <denominator>4</denominator>
+                </tsig>
+				<note>
+                    <staffposition>F#</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>D#</staffposition>
+                    <duration>0.125</duration>
+                </note>
+				<note>
+                    <staffposition>F#</staffposition>
+                    <duration>0.0625</duration>
+                </note>
+				<note>
+                    <staffposition>B</staffposition>
+                    <duration>0.25</duration>
+                </note>
+			</measure>
+            <answer>
+                <note>
+                    <staffposition>E</staffposition>
+                    <duration>0.09375</duration>
+                </note>
+            </answer>
+        </question>
+        <question>
+            <type>1</type>
+            <text>Identify the song from the movie</text>
+            <choices>
+                <choice>Pirates of the Carbbean</choice>
+                <choice>Start War</choice>
+                <choice>Harry Porter</choice>
+                <choice>yankee doodle</choice>
+            </choices>
+            <answer>3</answer>
+        </question>
+        <question>
+            <type>2</type>
+            <text>How many 1/16 notes are there?</text>            
+            <answer>5</answer>
         </question>
     </puzzle>
 </config>

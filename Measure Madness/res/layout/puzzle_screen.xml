@@ -43,6 +43,13 @@
 	                android:layout_weight="1" />
 
 	        </LinearLayout>
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_horizontal"
+	            android:text="Choose a note to complete the measure!" />
 
 	        <Spinner
 	            android:id="@+id/spinner1"
@@ -64,6 +71,7 @@
 	                android:layout_height="wrap_content"
 	                android:layout_marginRight="20dp"
 	                android:layout_marginBottom="25dp"
+	                android:onClick="onClickPlay"
 	                android:text="Play" />
 
 	            <Button

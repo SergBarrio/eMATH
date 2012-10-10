@@ -26,7 +26,6 @@ public class MusicAdapter extends BaseAdapter {
 		this.noteValues = noteValues;
 	}
 	
-	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -106,19 +105,16 @@ public class MusicAdapter extends BaseAdapter {
 		}
 	}
 	
-	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return noteValues.size();
 	}
 
-	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public long getItemId(int position) {
 		// TODO Auto-generated method stub
 		return 0;
