@@ -5,8 +5,8 @@
     <string name="menu_settings_2">Settings</string>
     <string name="menu_settings_3">Settings</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_2">MainActivity</string>
-    <string name="title_activity_3">MainActivity</string>
+    <string name="title_activity_2">Puzzle Selection</string>
+    <string name="title_activity_3">Puzzle</string>
     
     <string name="spinner_prompt">Select a note</string>
     

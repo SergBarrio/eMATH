@@ -30,6 +30,8 @@ import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RatingBar;
+import android.widget.ScrollView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -43,7 +45,7 @@ public class puzzle_screen extends Activity {
 	LinearLayout linearLayout;
 	Gallery galleryView;
 	MediaPlayer player;
-	private int solved = 0;
+	public static int solved = 0;
 	private EditText userAnswer;
 	Spinner spinner;
 	private final double[] noteDurations = {1.0,0.5,-0.5,0.25,-0.25,0.75,
@@ -56,7 +58,8 @@ public class puzzle_screen extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.puzzle_screen);
+        setContentView(R.layout.puzzle_screen);     
+        
         final LayoutInflater inflater = (LayoutInflater) this
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         		
@@ -67,6 +70,7 @@ public class puzzle_screen extends Activity {
         linearLayout = (LinearLayout) findViewById(R.id.musiclayout);
         
         View view = findViewById(R.id.timesig);
+        
         view = inflater.inflate(R.layout.time_signature_view, null);
         
         TextView timesig = (TextView) view.findViewById(R.id.numerator);
@@ -210,10 +214,10 @@ public class puzzle_screen extends Activity {
 		Toast.makeText(v.getContext(),
 		        string,
 		        Toast.LENGTH_SHORT).show();
-		
 		if (correct) {
 			solved += 1;
 		}
+		
 	}
 	
 	// Verify question 3 when user clicks submit

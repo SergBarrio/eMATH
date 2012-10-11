@@ -1,34 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal|right"
-    android:orientation="vertical" >
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
-    <!-- Screen Design for Photos -->
+	<!-- Screen Design for Photos -->
 
-    <Button
-        android:id="@+id/puzzle1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickPuzzle1"
-        android:text="Puzzle #1" />
+	<RelativeLayout android:layout_width="match_parent"
+		android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/puzzle2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickPuzzle2"
-        android:text="Puzzle #2" />
+		<RatingBar android:id="@+id/ratingBar1"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+			android:isIndicator="true" android:numStars="3" android:stepSize="1" 
+			android:layout_marginTop="0dp"/>
+		
+		<RatingBar android:id="@+id/ratingBar2"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+			android:isIndicator="true" android:numStars="3" android:stepSize="1" 
+			android:layout_marginTop="75dp"/>
+		
+		<RatingBar android:id="@+id/ratingBar3"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+			android:isIndicator="true" android:numStars="3" android:stepSize="1" 
+			android:layout_marginTop="150dp"/>
+		
+		<RatingBar android:id="@+id/ratingBar4"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+			android:isIndicator="true" android:numStars="3" android:stepSize="1" 
+			android:layout_marginTop="225dp"/>
+		
+		<RatingBar android:id="@+id/ratingBar5"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+			android:isIndicator="true" android:numStars="3" android:stepSize="1" 
+			android:layout_marginTop="300dp"/>
 
-    <Button
-        android:id="@+id/puzzle3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:onClick="onClickPuzzle3"
-        android:text="Puzzle #3" />
-    
+
+		<Button android:id="@+id/puzzle1" android:layout_width="match_parent"
+			android:layout_height="60dp" android:layout_alignParentRight="true" 
+			android:layout_marginTop="0dp" android:onClick="onClickPuzzle1" android:text="Puzzle #1" 
+			android:layout_toRightOf="@+id/ratingBar1"/>
+
+		<Button android:id="@+id/puzzle2" android:layout_width="match_parent"
+			android:layout_height="60dp" android:layout_alignParentRight="true" 
+			android:layout_marginTop="75dp" android:onClick="onClickPuzzle2" android:text="Puzzle #2" 
+			android:layout_toRightOf="@+id/ratingBar2"/>
+
+		<Button android:id="@+id/puzzle3" android:layout_width="match_parent"
+			android:layout_height="60dp" android:layout_marginTop="150dp"
+			android:onClick="onClickPuzzle3" android:text="Puzzle #3" 
+			android:layout_toRightOf="@+id/ratingBar3"/>
+
+		<Button android:id="@+id/puzzle4" android:layout_width="match_parent"
+			android:layout_height="60dp" android:layout_marginTop="225dp"
+			android:onClick="onClickPuzzle4" android:text="Puzzle #4" 
+			android:layout_toRightOf="@+id/ratingBar4"/>
+
+		<Button android:id="@+id/puzzle5" android:layout_width="match_parent"
+			android:layout_height="60dp" android:layout_marginTop="300dp"
+			android:onClick="onClickPuzzle5" android:text="Puzzle #5" 
+			android:layout_toRightOf="@+id/ratingBar5"/>
+
+	</RelativeLayout>
 </LinearLayout>
