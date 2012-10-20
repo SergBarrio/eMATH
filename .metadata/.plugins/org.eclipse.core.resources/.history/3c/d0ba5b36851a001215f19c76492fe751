@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <Button 
+        android:id="@+id/easy" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentTop="true" 
+        android:layout_centerHorizontal="true" 
+        android:layout_marginTop="78dp" 
+        android:text="Easy"/>
+    
+    <Button android:id="@+id/medium" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignLeft="@+id/easy" 
+        android:layout_below="@+id/easy" 
+        android:layout_marginTop="45dp" 
+        android:text="Medium"/>
+    
+    <Button android:id="@+id/hard" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignLeft="@+id/medium" 
+        android:layout_below="@+id/medium" 
+        android:layout_marginTop="69dp" 
+        android:text="Hard"/>
+
+</RelativeLayout>

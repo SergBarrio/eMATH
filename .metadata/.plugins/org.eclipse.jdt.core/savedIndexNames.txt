@@ -1,0 +1,6 @@
+INDEX VERSION 1.126+C:\Users\Cory\Documents\fall2012\482\.metadata\.plugins\org.eclipse.jdt.core
+3138162982.index
+1387683540.index
+3262075683.index
+2106359609.index
+727554238.index

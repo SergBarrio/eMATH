@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">InternationalMall</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Restaurant App</string>
+    <string name="title_order_list">Order List</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <Button 
+        android:id="@+id/easy" 
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:layout_marginTop="78dp" android:text="Easy"/>
+    <Button android:id="@+id/medium" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_below="@+id/easy" android:layout_marginTop="50dp" android:text="Medium"/>
+    <Button android:id="@+id/hard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_below="@+id/medium" android:layout_marginTop="62dp" android:text="Hard"/>
+
+</RelativeLayout>
