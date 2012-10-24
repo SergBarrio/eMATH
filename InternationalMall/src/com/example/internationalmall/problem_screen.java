@@ -1,6 +1,7 @@
 package com.example.internationalmall;
 
 //http://stackoverflow.com/questions/5847422/table-layout-in-android-row-sizing
+//http://android.programmerguru.com/android-tablelayout-example/
 //go here for xml file help
 
 import java.io.File;
