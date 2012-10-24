@@ -41,7 +41,8 @@ public class results_screen extends Activity implements OnClickListener{
 
 	public void onClick(View v) {
 		if (v == button) {
-	        Intent playGame = new Intent(this, restaurant_main.class);
+	        Intent start = new Intent(this, restaurant_main.class);
+	        startActivity(start);
 		}
 	}
 	

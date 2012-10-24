@@ -1,33 +1,48 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    <Button 
-        android:id="@+id/easy" 
-        android:layout_width="match_parent" 
-        android:layout_height="wrap_content"
-         android:layout_alignParentTop="true" 
-         android:layout_centerHorizontal="true" 
-         android:layout_marginTop="78dp" 
-         android:text="Easy"/>
-    
-    <Button 
-        android:id="@+id/medium" 
-        android:layout_width="match_parent" 
-        android:layout_height="wrap_content" 
-        android:layout_alignParentLeft="true" 
-        android:layout_below="@+id/easy" 
-        android:layout_marginTop="50dp" 
-        android:text="Medium"/>
-    
-    <Button 
-        android:id="@+id/hard" 
-        android:layout_width="match_parent" 
-        android:layout_height="wrap_content" 
-        android:layout_alignParentLeft="true" 
-        android:layout_below="@+id/medium" 
-        android:layout_marginTop="62dp" 
-        android:text="Hard"/>
+    android:layout_height="match_parent" 
+    android:background = "@color/sandy_brown">
 
+    <Button
+        android:id="@+id/hard"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="118dp"
+        android:layout_marginRight="25dp"
+        android:text="Hard" />
+
+    <Button
+        android:id="@+id/medium"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/hard"
+        android:layout_alignBottom="@+id/hard"
+        android:layout_marginBottom="118dp"
+        android:layout_centerHorizontal="true"
+        android:text="Medium"/>
+
+    <Button
+        android:id="@+id/easy"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/medium"
+        android:layout_alignBottom="@+id/medium"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="118dp"
+        android:layout_marginLeft="25dp"
+        android:text="Easy" />
+
+    <TextView
+        android:id="@+id/difficulty_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:text="Select Difficulty" 
+        android:textSize="23dp"/>
     
 </RelativeLayout>

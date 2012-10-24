@@ -44,10 +44,18 @@ public class restaurant_main extends Activity implements OnClickListener{
     }
 
 
-	@Override
 	public void onClick(View v) {
 		if (v == easy) {
 	        Intent start = new Intent(this, order_list.class);	
+	        startActivity(start);
+		}
+		if (v == medium) {
+	        Intent start = new Intent(this, order_list.class);	
+	        startActivity(start);
+		}
+		if (v == hard) {
+	        Intent start = new Intent(this, order_list.class);	
+	        startActivity(start);
 		}
 		
 	}

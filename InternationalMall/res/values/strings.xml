@@ -4,7 +4,9 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Restaurant App</string>
     <string name="title_order_list">Order List</string>
-    <string name="title_problem_screen">Problem Screen</string>
+    <string name="title_problem_screen">Ingredients</string>
     <string name="title_results_screen">Results</string>
+    <color name="sandy_brown">#EE9A4D</color>
+    <string name="difficulty_title">Select Difficulty</string>
 
 </resources>
