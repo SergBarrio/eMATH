@@ -20,33 +20,27 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.TextView;
 import android.content.DialogInterface;
 import android.content.Intent;
 
 public class problem_screen extends Activity implements OnClickListener{
 
-	Button button;
-	Button cup1;
-	Button cup2;
-	Button cup3;
-	Button cup4;
-	
-	Button plus_cup1;
-	Button minus_cup1;
-	Button plus_cup2;
-	Button minus_cup2;
-	Button plus_cup3;
-	Button minus_cup3;
-	Button plus_cup4;
-	Button minus_cup4;
+	Button button, cup1, cup2, cup3, cup4;	
+	Button plus_cup1, minus_cup1, plus_cup2, minus_cup2;
+	Button plus_cup3, minus_cup3, plus_cup4, minus_cup4;	
+	TextView cup1_text, cup2_text, cup3_text, cup4_text;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.problem_screen);  
+        /*
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
-        
+        */
         cup1 = (Button)findViewById(R.id.cup1);
         cup1.setOnClickListener(this);
         
@@ -78,6 +72,17 @@ public class problem_screen extends Activity implements OnClickListener{
         plus_cup4.setOnClickListener(this);
         minus_cup4 = (Button)findViewById(R.id.minus_cup4);
         minus_cup4.setOnClickListener(this);
+        
+        cup1_text=(TextView)findViewById(R.id.cup1_text);
+        cup2_text=(TextView)findViewById(R.id.cup2_text);
+        cup3_text=(TextView)findViewById(R.id.cup3_text);
+        cup4_text=(TextView)findViewById(R.id.cup4_text);
+        
+        cup1_text.setText("0");
+        cup2_text.setText("0");
+        cup3_text.setText("0");
+        cup4_text.setText("0");
+        
     }
 
     @Override
@@ -86,26 +91,61 @@ public class problem_screen extends Activity implements OnClickListener{
         return true;
     }
 
+    public static int numClick_cup1,numClick_cup2,numClick_cup3,numClick_cup4;
+    
 	public void onClick(View v) {
 		if (v == button) {
 	        Intent start = new Intent(this, results_screen.class);
 	        startActivity(start);
 		}
 		
-		if(v == cup1){
-			//add cup1 size to total	
+		if(v == plus_cup1){
+			//add cup1 size to total
+			numClick_cup1++;
+			cup1_text.setText(Integer.toString(numClick_cup1));
+		}
+		if(v == minus_cup1){
+			//add cup1 size to total
+			if(numClick_cup1==0) { } //do nothing
+			else{ numClick_cup1--; } //decrement								
+			cup1_text.setText(Integer.toString(numClick_cup1));
 		}
 		
-		if(v == cup2){
-			//add cup1 size to total	
+		if(v == plus_cup2){
+			//add cup1 size to total
+			numClick_cup2++;
+			cup2_text.setText(Integer.toString(numClick_cup2));
+		}
+		if(v == minus_cup2){
+			//add cup1 size to total
+			if(numClick_cup2==0) { } //do nothing
+			else{ numClick_cup2--; } //decrement								
+			cup2_text.setText(Integer.toString(numClick_cup2));
 		}
 		
-		if(v == cup3){
+		if(v == plus_cup3){
+			//add cup1 size to total
+			numClick_cup3++;
+			cup3_text.setText(Integer.toString(numClick_cup3));
+			
+		}
+		if(v == minus_cup3){
 			//add cup1 size to total	
+			if(numClick_cup3==0) { } //do nothing
+			else{ numClick_cup3--; } //decrement								
+			cup3_text.setText(Integer.toString(numClick_cup3));
 		}
 		
-		if(v == cup4){
+		if(v == plus_cup4){
+			//add cup1 size to total
+			numClick_cup4++;
+			cup4_text.setText(Integer.toString(numClick_cup4));
+		}
+		if(v == minus_cup4){
 			//add cup1 size to total	
+			if(numClick_cup4==0) { } //do nothing
+			else{ numClick_cup4--; } //decrement								
+			cup4_text.setText(Integer.toString(numClick_cup4));
 		}
 		
 	}

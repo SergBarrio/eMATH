@@ -1,94 +1,191 @@
-<?xml version="1.0" encoding="utf-8"?>	
-    <TableLayout 
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:shrinkColumns="*"
-        android:stretchColumns="*"
-        android:background="@color/sandy_brown">
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-            <Button 
-        		android:id="@+id/cup1"     		
-        		android:text="1/8 Cup"
-        		android:gravity="center_horizontal"/>
-            <Button 
-        		android:id="@+id/cup2"       		
-        		android:text="1/4 Cup"
-        		android:gravity="center_horizontal"/>    
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            
-            <Button 
-        		android:id="@+id/plus_cup1"         		
-        		android:text="+"
-        		android:gravity="center_horizontal"/>
-
-            <Button
-                android:id="@+id/minus_cup1"
-                android:gravity="center_horizontal"
-                android:text="-" />
-
-            <Button 
-        		android:id="@+id/plus_cup2"       		
-        		android:text="+"
-        		android:gravity="center_horizontal"/>
-            <Button 
-        		android:id="@+id/minus_cup2"       		
-        		android:text="-"
-        		android:gravity="center_horizontal"/>
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button 
-        		android:id="@+id/cup3"        		
-        		android:text="1/3 Cup"
-        		android:gravity="center_horizontal"/>
-            <Button 
-        		android:id="@+id/cup4"       		
-        		android:text="1/2 Cup"
-        		android:gravity="center_horizontal"/> 
-        </TableRow>
+<?xml version="1.0" encoding="utf-8"?>
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       	android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
         
-        <TableRow
-            android:id="@+id/tableRow4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button 
-        		android:id="@+id/plus_cup3"        		
-        		android:text="+"
-        		android:gravity="center_horizontal"/>
-            <Button 
-        		android:id="@+id/minus_cup3"         		
-        		android:text="-"
-        		android:gravity="center_horizontal"/>
-            <Button 
-        		android:id="@+id/plus_cup4"        		
-        		android:text="+"
-        		android:gravity="center_horizontal"/>
-            <Button 
-        		android:id="@+id/minus_cup4"        		
-        		android:text="-"
-        		android:gravity="center_horizontal"/>
-        </TableRow>
+        <LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="50dp">
+		</LinearLayout>
+		
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+	    	<Button
+            	android:id="@+id/cup1"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/cup"/>
+	    	<Button
+            	android:id="@+id/cup2"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/cup"/>
+		 </LinearLayout>  
+		 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="70dp"/>
+            <TextView
+                android:id="@+id/cup1_text"
+                android:editable="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+            <TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="150dp"/>
+            <TextView
+                android:id="@+id/cup2_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+            <TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="70dp"/>
+        </LinearLayout>
+        
+		 <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="30dp"/>
+	    	<Button
+            	android:id="@+id/plus_cup1"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/plus" />
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="25dp"/>
+	    	<Button
+            	android:id="@+id/minus_cup1"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/minus" />
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="60dp"/>
+	    	<Button
+            	android:id="@+id/plus_cup2"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/plus" />
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="25dp"/>
+	    	<Button
+            	android:id="@+id/minus_cup2"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/minus" />
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="30dp"/>
+	    </LinearLayout> 
+	    
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="30dp">"
+		</LinearLayout>
+		 
+	    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+	    	<Button
+            	android:id="@+id/cup3"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/cup"/>
+	    	<Button
+            	android:id="@+id/cup4"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/cup"/>
+	    </LinearLayout> 
+	    
+	    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="70dp"/>
+            <TextView
+                android:id="@+id/cup3_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+            <TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="150dp"/>
+            <TextView
+                android:id="@+id/cup4_text"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+            <TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="70dp"/>
+        </LinearLayout>
+	    
+	    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="30dp"/>
+	    	<Button
+            	android:id="@+id/plus_cup3"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/plus" />
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="25dp"/>
+	    	<Button
+            	android:id="@+id/minus_cup3"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/minus"/>
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="60dp"/>
+	    	<Button
+            	android:id="@+id/plus_cup4"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/plus" />
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="25dp"/>
+	    	<Button
+            	android:id="@+id/minus_cup4"
+            	android:layout_width="0dp"
+            	android:layout_height="wrap_content"
+            	android:layout_weight="1"
+            	android:background="@drawable/minus"/>
+	    	<TextView
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_width="30dp"/>
+	    </LinearLayout> 
+	    
+	</LinearLayout>
 
-        <TableRow
-            android:id="@+id/tableRow5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button 
-        		android:id="@+id/button" 
-        		android:gravity="center_horizontal"
-        		android:text="->Result Screen"/>
-        </TableRow>
-    </TableLayout>
