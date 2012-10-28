@@ -28,10 +28,12 @@ import android.content.Intent;
 
 public class problem_screen extends Activity implements OnClickListener{
 
-	Button button, cup1, cup2, cup3, cup4;	
+	Button button, cup1, cup2, cup3, cup4, submit;	
 	Button plus_cup1, minus_cup1, plus_cup2, minus_cup2;
 	Button plus_cup3, minus_cup3, plus_cup4, minus_cup4;	
 	TextView cup1_text, cup2_text, cup3_text, cup4_text;
+	TextView cup1_size, cup2_size, cup3_size, cup4_size;
+	TextView goal_total;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,9 @@ public class problem_screen extends Activity implements OnClickListener{
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
         */
+        submit = (Button)findViewById(R.id.submit);
+        submit.setOnClickListener(this);
+        
         cup1 = (Button)findViewById(R.id.cup1);
         cup1.setOnClickListener(this);
         
@@ -83,6 +88,20 @@ public class problem_screen extends Activity implements OnClickListener{
         cup3_text.setText("0");
         cup4_text.setText("0");
         
+        cup1_size=(TextView)findViewById(R.id.cup1_size);
+        cup2_size=(TextView)findViewById(R.id.cup2_size);
+        cup3_size=(TextView)findViewById(R.id.cup3_size);
+        cup4_size=(TextView)findViewById(R.id.cup4_size);
+        //hard coded to match mockup; change to be dynamic to recipe
+        cup1_size.setText("1/2 Cup");
+        cup2_size.setText("1/3 Cup");
+        cup3_size.setText("1/4 Cup");
+        cup4_size.setText("1/5 Cup");
+        
+        goal_total=(TextView)findViewById(R.id.goal_total);
+        //hard coded to match mockup; change to be dynamic to recipe
+        goal_total.setText("2 1/3 Cups of Rice");
+        
     }
 
     @Override
@@ -93,10 +112,26 @@ public class problem_screen extends Activity implements OnClickListener{
 
     public static int numClick_cup1,numClick_cup2,numClick_cup3,numClick_cup4;
     
+    //if easy == 3, if medium == 6, if hard == 9
+    public static int remaining_recipes=3; //default easy
+    
 	public void onClick(View v) {
 		if (v == button) {
 	        Intent start = new Intent(this, results_screen.class);
 	        startActivity(start);
+		}
+		
+		if(v == submit){
+			remaining_recipes--;
+			numClick_cup1=numClick_cup2=numClick_cup3=numClick_cup4=0;
+			if(remaining_recipes > 0){
+				Intent start = new Intent(this, order_list.class);
+				startActivity(start);
+			}
+			if(remaining_recipes == 0){
+				Intent start = new Intent(this, results_screen.class);
+				startActivity(start);
+			}
 		}
 		
 		if(v == plus_cup1){
