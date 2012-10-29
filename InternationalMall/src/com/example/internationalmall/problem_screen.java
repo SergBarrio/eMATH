@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.content.DialogInterface;
 import android.content.Intent;
 
@@ -122,6 +123,24 @@ public class problem_screen extends Activity implements OnClickListener{
 		}
 		
 		if(v == submit){
+			// Sergio - validating input here
+			System.out.println("Cup 1: " + numClick_cup1);
+			System.out.println("Cup 2: " + numClick_cup2);
+			System.out.println("Cup 3: " + numClick_cup3);
+			System.out.println("Cup 4: " + numClick_cup4);
+			
+			Boolean correct = false;
+			
+			if(numClick_cup1 == 0 && 
+				numClick_cup3 == 0 && 
+				numClick_cup4 == 0 && 
+				numClick_cup2 == 2){ correct = true; }
+			
+			Toast.makeText(v.getContext(),
+			        String.valueOf(correct),
+			        Toast.LENGTH_LONG).show();
+			
+			// Continue game logic
 			remaining_recipes--;
 			numClick_cup1=numClick_cup2=numClick_cup3=numClick_cup4=0;
 			if(remaining_recipes > 0){
