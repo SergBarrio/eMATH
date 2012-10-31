@@ -4,12 +4,82 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background = "@color/sandy_brown">
-    <Button 
-        android:id="@+id/button" 
-        android:layout_width="wrap_content" 
-        android:layout_height="wrap_content" 
-        android:layout_alignParentLeft="true" 
-        android:layout_alignParentTop="true" 
-        android:text="->Difficulty Screen"/>
+
+    <TextView 
+    android:id="@+id/mytextview3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:text="Time :"
+    />
+
+    <TextView 
+    android:id="@+id/time"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_marginLeft="40dp"
+    
+    />
+    
+    <TextView 
+    android:id="@+id/mytextview5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/mytextview3" 
+    android:text="Perfect Recipes :"
+    />
+    
+    <TextView 
+    android:id="@+id/mytextview6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_below="@+id/mytextview3" 
+    android:layout_marginLeft="110dp"
+    android:text="3"
+    />
+    
+     <TextView 
+    android:id="@+id/mytextview7"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_below="@+id/mytextview5" 
+
+    android:text="Acceptable Recipes :"
+    />
+     
+    <TextView 
+    android:id="@+id/mytextview8"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_below="@+id/mytextview5" 
+    android:layout_marginLeft="0dp"
+    android:text=""
+    />
+     
+     <TextView 
+    android:id="@+id/mytextview9"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_below="@+id/mytextview7" 
+    android:layout_marginLeft="0dp"
+    android:text="Failed Recipes :"
+    />
+     
+    <TextView 
+    android:id="@+id/mytextview10"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:layout_below="@+id/mytextview7" 
+    android:layout_marginLeft="0dp"
+    android:text=""
+    />
+    
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="171dp"
+        android:text="->Difficulty Screen" />
     
 </RelativeLayout>

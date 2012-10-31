@@ -25,6 +25,8 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.content.DialogInterface;
 import android.content.Intent;
+import java.util.*;
+
 
 public class problem_screen extends Activity implements OnClickListener{
 
@@ -35,10 +37,20 @@ public class problem_screen extends Activity implements OnClickListener{
 	TextView cup1_size, cup2_size, cup3_size, cup4_size;
 	TextView goal_total;
 	
+	long entTime;
+	long startTime;
+	long elapseTime;
+	long elapseSecond;
+
+
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.problem_screen);  
+        setContentView(R.layout.problem_screen);
+        
+        startTime = System.currentTimeMillis();
+        
         /*
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
@@ -115,10 +127,14 @@ public class problem_screen extends Activity implements OnClickListener{
     //if easy == 3, if medium == 6, if hard == 9
     public static int remaining_recipes=3; //default easy
     
+    public static long[] times = new long[remaining_recipes];
+    
 	public void onClick(View v) {
+		
 		if (v == button) {
 	        Intent start = new Intent(this, results_screen.class);
 	        startActivity(start);
+	        
 		}
 		
 		if(v == submit){
@@ -126,10 +142,27 @@ public class problem_screen extends Activity implements OnClickListener{
 			numClick_cup1=numClick_cup2=numClick_cup3=numClick_cup4=0;
 			if(remaining_recipes > 0){
 				Intent start = new Intent(this, order_list.class);
+				
+				
+				entTime = System.currentTimeMillis();
+				elapseTime =  entTime - startTime;
+				elapseSecond = elapseTime / 1000;
+				times[remaining_recipes] = elapseSecond;
 				startActivity(start);
 			}
 			if(remaining_recipes == 0){
 				Intent start = new Intent(this, results_screen.class);
+				
+				entTime = System.currentTimeMillis();
+				elapseTime = entTime - startTime;
+				elapseSecond = elapseTime / 1000;
+				times[remaining_recipes] = elapseSecond;
+				
+				
+//				Intent time = new Intent(this, results_screen.class);
+				start.putExtra( "alltime" , times);
+//				startActivity(time);
+				
 				startActivity(start);
 			}
 		}
