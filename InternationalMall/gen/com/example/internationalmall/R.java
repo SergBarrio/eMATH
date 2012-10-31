@@ -22,7 +22,7 @@ public final class R {
         public static final int shazz_drawing=0x7f020005;
     }
     public static final class id {
-        public static final int button=0x7f080020;
+        public static final int button=0x7f080028;
         public static final int cup1=0x7f080008;
         public static final int cup1_size=0x7f080006;
         public static final int cup1_text=0x7f08000a;
@@ -40,11 +40,18 @@ public final class R {
         public static final int goal_total=0x7f080005;
         public static final int hard=0x7f08001b;
         public static final int medium=0x7f08001c;
-        public static final int menu_settings=0x7f080021;
+        public static final int menu_settings=0x7f080029;
         public static final int minus_cup1=0x7f08000d;
         public static final int minus_cup2=0x7f08000f;
         public static final int minus_cup3=0x7f080017;
         public static final int minus_cup4=0x7f080019;
+        public static final int mytextview10=0x7f080027;
+        public static final int mytextview3=0x7f080020;
+        public static final int mytextview5=0x7f080022;
+        public static final int mytextview6=0x7f080023;
+        public static final int mytextview7=0x7f080024;
+        public static final int mytextview8=0x7f080025;
+        public static final int mytextview9=0x7f080026;
         public static final int plus_cup1=0x7f08000c;
         public static final int plus_cup2=0x7f08000e;
         public static final int plus_cup3=0x7f080016;
@@ -56,6 +63,7 @@ public final class R {
         public static final int recipe_item_5=0x7f080004;
         public static final int shazz_drawing=0x7f08001f;
         public static final int submit=0x7f08001a;
+        public static final int time=0x7f080021;
     }
     public static final class layout {
         public static final int order_list=0x7f030000;
