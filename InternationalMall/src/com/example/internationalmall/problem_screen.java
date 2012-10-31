@@ -4,27 +4,15 @@ package com.example.internationalmall;
 //http://android.programmerguru.com/android-tablelayout-example/
 //go here for xml file help
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import org.xmlpull.v1.XmlPullParserException;
-import android.media.MediaPlayer;
+import org.apache.commons.math.fraction.Fraction;
 import android.os.Bundle;
-import android.os.Environment;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.DialogInterface;
 import android.content.Intent;
 
 public class problem_screen extends Activity implements OnClickListener{
@@ -110,8 +98,16 @@ public class problem_screen extends Activity implements OnClickListener{
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
-
+    
+    //initialize background values of the cups and goal
     public static int numClick_cup1,numClick_cup2,numClick_cup3,numClick_cup4;
+    
+    public static Fraction frac_cup1 = Fraction.ONE_HALF, 
+    				frac_cup2 = Fraction.ONE_THIRD, 
+    				frac_cup3 = Fraction.ONE_QUARTER, 
+    				frac_cup4 = Fraction.ONE_FIFTH;
+    
+    public static Fraction frac_goal = Fraction.ONE_THIRD.multiply(2);
     
     //if easy == 3, if medium == 6, if hard == 9
     public static int remaining_recipes=3; //default easy
@@ -124,17 +120,20 @@ public class problem_screen extends Activity implements OnClickListener{
 		
 		if(v == submit){
 			// Sergio - validating input here
-			System.out.println("Cup 1: " + numClick_cup1);
-			System.out.println("Cup 2: " + numClick_cup2);
-			System.out.println("Cup 3: " + numClick_cup3);
-			System.out.println("Cup 4: " + numClick_cup4);
-			
 			Boolean correct = false;
 			
-			if(numClick_cup1 == 0 && 
-				numClick_cup3 == 0 && 
-				numClick_cup4 == 0 && 
-				numClick_cup2 == 2){ correct = true; }
+			Fraction frac_response = Fraction.ZERO;
+			frac_response = frac_response.add(frac_cup1.multiply(numClick_cup1));
+			frac_response = frac_response.add(frac_cup2.multiply(numClick_cup2));
+			frac_response = frac_response.add(frac_cup3.multiply(numClick_cup3));
+			frac_response = frac_response.add(frac_cup4.multiply(numClick_cup4));
+			
+			/* For testing
+			System.out.println("Response: " + frac_response);
+			System.out.println("Goal: " + frac_goal);
+			*/
+			
+			if(frac_response.equals(frac_goal)){ correct = true; }
 			
 			Toast.makeText(v.getContext(),
 			        String.valueOf(correct),
