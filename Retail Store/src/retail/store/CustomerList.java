@@ -12,7 +12,9 @@ public class CustomerList extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_retail_customers);
 	    
-	    String[] customerArray = new String[9];
+	    ListView customer_screen = (ListView) findViewById(R.id.customer_list);
+	    
+	    String[] customerArray = new String[4];
 	    
 	    // Hard coded for now
 	    customerArray[0] = "Alice";
@@ -20,12 +22,13 @@ public class CustomerList extends Activity {
 	    customerArray[2] = "Charlie";
 	    customerArray[3] = "David";
 	    
+	    System.out.println("Element at index 0: "
+                + customerArray[0]);
+	    
 		ArrayAdapter<String> customer_list = 
 				new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, customerArray);
 		
-		ListView customer_screen = (ListView) findViewById(R.layout.activity_retail_customers);
 		customer_screen.setAdapter(customer_list);
-	    
 	}
 
 }
