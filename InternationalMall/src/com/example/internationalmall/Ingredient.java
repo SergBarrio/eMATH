@@ -6,7 +6,9 @@
  */
 package com.example.internationalmall;
 
-public class Ingredient {
+import java.io.Serializable;
+
+public class Ingredient implements Serializable {
 	
 	private Long recipe_id;
 	private Long ingredient_id;

@@ -4,18 +4,12 @@
  */
 package com.example.internationalmall;
 
-import java.util.ArrayList;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Environment;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.content.DialogInterface;
 import android.content.Intent;
 
 public class restaurant_main extends Activity implements OnClickListener{
@@ -26,7 +20,7 @@ public class restaurant_main extends Activity implements OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.restaurant_main);  
+        setContentView(R.layout.restaurant_main);
         
         easy = (Button)findViewById(R.id.easy);
         easy.setOnClickListener(this);
@@ -35,7 +29,7 @@ public class restaurant_main extends Activity implements OnClickListener{
         hard = (Button)findViewById(R.id.hard);
         hard.setOnClickListener(this);
         
-        ImageView image = (ImageView)findViewById(R.id.shazz_drawing);
+        //ImageView image = (ImageView)findViewById(R.id.shazz_drawing);
         
         
     }
@@ -49,15 +43,21 @@ public class restaurant_main extends Activity implements OnClickListener{
 
 	public void onClick(View v) {
 		if (v == easy) {
+			GetOrder getOrder = new GetOrder(this,"easy");
 	        Intent start = new Intent(this, order_list.class);	
+	        start.putExtra("order", getOrder.getOrder());
 	        startActivity(start);
 		}
 		if (v == medium) {
-	        Intent start = new Intent(this, order_list.class);	
+			GetOrder getOrder = new GetOrder(this,"medium");
+	        Intent start = new Intent(this, order_list.class);
+	        start.putExtra("order", getOrder.getOrder());
 	        startActivity(start);
 		}
 		if (v == hard) {
-	        Intent start = new Intent(this, order_list.class);	
+			GetOrder getOrder = new GetOrder(this,"easy");
+	        Intent start = new Intent(this, order_list.class);
+	        start.putExtra("order", getOrder.getOrder());
 	        startActivity(start);
 		}
 		

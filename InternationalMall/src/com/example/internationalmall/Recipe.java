@@ -5,10 +5,11 @@
  */
 package com.example.internationalmall;
 
+import java.io.Serializable;
 import java.util.Vector;
 import org.json.JSONArray;
 
-public class Recipe {
+public class Recipe implements Serializable {
 	private String id;			// ID in Kitchen Monki API
 	private Long recipe_id;		// ID in database
 	private String name;
