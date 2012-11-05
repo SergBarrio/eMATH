@@ -7,12 +7,10 @@ package com.example.internationalmall;
 import org.apache.commons.math.fraction.Fraction;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.content.Intent;
 
 public class problem_screen extends Activity implements OnClickListener{
@@ -33,24 +31,13 @@ public class problem_screen extends Activity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.problem_screen);  
 		startTime = System.currentTimeMillis();
-        /*
+        
+		/*
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
         */
         submit = (Button)findViewById(R.id.submit);
         submit.setOnClickListener(this);
-        
-        cup1 = (Button)findViewById(R.id.cup1);
-        cup1.setOnClickListener(this);
-        
-        cup2 = (Button)findViewById(R.id.cup2);
-        cup2.setOnClickListener(this);
-        
-        cup3 = (Button)findViewById(R.id.cup3);
-        cup3.setOnClickListener(this);
-        
-        cup4 = (Button)findViewById(R.id.cup4);
-        cup4.setOnClickListener(this);
         
         plus_cup1 = (Button)findViewById(R.id.plus_cup1);
         plus_cup1.setOnClickListener(this);
@@ -98,12 +85,6 @@ public class problem_screen extends Activity implements OnClickListener{
         
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
-    
     //initialize background values of the cups and goal
     public static int numClick_cup1,numClick_cup2,numClick_cup3,numClick_cup4;
     
@@ -142,9 +123,7 @@ public class problem_screen extends Activity implements OnClickListener{
 			
 			if(frac_response.equals(frac_goal)){ correct = true; }
 			
-			Toast.makeText(v.getContext(),
-			        String.valueOf(correct),
-			        Toast.LENGTH_LONG).show();
+			System.out.println(correct);
 			
 			// Continue game logic
 			remaining_recipes--;
