@@ -5,5 +5,10 @@
     <string name="activity_retail_main">RetailMain</string>
     <color name="background_blue">#0066CC</color>
     <string name="activity_retail_customers">RetailCustomers</string>
+    <string name="selectdiff">Select Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="start">Start</string>
 
 </resources>
