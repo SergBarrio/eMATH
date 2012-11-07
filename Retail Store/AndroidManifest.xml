@@ -23,6 +23,9 @@
         <activity
             android:name=".CustomerList" >
         </activity>
+        <activity
+            android:name=".ProblemScreen" >
+        </activity>
     </application>
 
 </manifest>
