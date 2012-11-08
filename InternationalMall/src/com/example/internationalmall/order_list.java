@@ -1,72 +1,88 @@
 package com.example.internationalmall;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.util.ArrayList;
-import org.xmlpull.v1.XmlPullParserException;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Environment;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.view.Menu;
+import android.app.ListActivity;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.content.DialogInterface;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.content.Intent;
 import java.util.*;
 
 
-public class order_list extends Activity implements OnClickListener{
-	static int recipe_pack = 0;	
-	
-	Button recipe_item_1;
-	Button recipe_item_2;
-	Button recipe_item_3;
-	Button recipe_item_4;
-	Button recipe_item_5;
-	
+
+public class order_list extends ListActivity implements OnItemClickListener{
+			
+	static int ps_difficulty = restaurant_main.difficulty;
+	ArrayList<Ingredient> ingredientArray = new ArrayList<Ingredient>();
+	Ingredient test1 = new Ingredient();
+	Ingredient test2 = new Ingredient();
+	Ingredient test3 = new Ingredient();
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.order_list); 
-        if(recipe_pack == 0){
-        	recipe_item_1 = (Button)findViewById(R.id.recipe_item_1);
-        	recipe_item_1.setOnClickListener(this);
-        	recipe_item_1.setText("Beef Empanadas");
-        	
-        	recipe_item_2 = (Button)findViewById(R.id.recipe_item_2);
-        	recipe_item_2.setOnClickListener(this);
-        	recipe_item_2.setText("Rice");
-        	
-        	recipe_item_3 = (Button)findViewById(R.id.recipe_item_3);
-        	recipe_item_3.setOnClickListener(this);
-        	recipe_item_3.setText("Black Beans");
-        	
-        	recipe_item_4 = (Button)findViewById(R.id.recipe_item_4);
-        	recipe_item_4.setOnClickListener(this);
-        	recipe_item_4.setText("Salad");
-        	
-        	recipe_item_5 = (Button)findViewById(R.id.recipe_item_5);
-        	recipe_item_5.setOnClickListener(this);
-        	recipe_item_5.setText("Cafe con Leche");
-        }
+        setContentView(R.layout.order_list);  
+        
+        test1.setName("Cheese");
+        test2.setName("Bread");
+        test3.setName("Crackers");
+        test1.setRecipe_id((long) 1);
+        test2.setRecipe_id((long) 1);
+        test3.setRecipe_id((long) 1);
+        test1.setIngredient_id((long) 1);
+        test2.setIngredient_id((long) 2);
+        test3.setIngredient_id((long) 3);
+        test1.setUnit("cup");
+        test2.setUnit("lb");
+        test3.setUnit("oz");
+        test1.setAmount(2.5);
+        test2.setAmount(2.75);
+        test3.setAmount(3);
+        ingredientArray.add(test1);
+        ingredientArray.add(test2);
+        ingredientArray.add(test3);
+        
+        String names[] = {test1.getName(), test2.getName(), test3.getName()};
+        ListView lv = (ListView)findViewById(android.R.id.list);
+        
+        lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names));              
     }
-
-	public void onClick(View v) {
-		//opens up different page based on pack
-		//onlly pack 1 included to initialize
-		if (v == recipe_item_1 ||v == recipe_item_2 ||v == recipe_item_3 ||v == recipe_item_4 ||v == recipe_item_5 ) {
-			//will need to change behavior of problem_screen based on recipe pack
-			//right now, only recipe pack 0 named.
-	        Intent start = new Intent(this, problem_screen.class);
-	        startActivity(start);
+    
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id){
+		super.onListItemClick(l, v, position, id);
+		/*String name = (String) getListAdapter().getItem(position);
+		if(name.equals("Cheese")){
+			Intent start = new Intent(this, problem_screen.class);
+			start.putExtra("unit", test1.getUnit());
+			start.putExtra("amount", test1.getAmount());
+			startActivity(start);
+			
 		}
+		if(name.equals("Bread")){
+			Intent start = new Intent(this, problem_screen.class);
+			start.putExtra("unit", test2.getUnit());
+			start.putExtra("amount", test2.getAmount());
+			startActivity(start);
+		}
+		if(name.equals("Crackers")){
+			Intent start = new Intent(this, problem_screen.class);
+			start.putExtra("unit", test3.getUnit());
+			start.putExtra("amount", test3.getAmount());
+			startActivity(start);
+		}*/
+		Intent start = new Intent(this, problem_screen.class);
+		startActivity(start);
+
 	}
-	
+
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		// TODO Auto-generated method stub
+		
+	}
+		
 }

@@ -27,7 +27,8 @@ public class problem_screen extends Activity implements OnClickListener{
 	long entTime;
 	long startTime;
 	long elapseTime;
-	long elapseSecond;
+	long elapseSecond;	
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,9 +93,14 @@ public class problem_screen extends Activity implements OnClickListener{
         cup3_size.setText("1/4 Cup");
         cup4_size.setText("1/5 Cup");
         
+
+        //String myunit = getIntent().getExtras().getString("unit");
+        //Double amount = getIntent().getExtras().getDouble("amount");
         goal_total=(TextView)findViewById(R.id.goal_total);
         //hard coded to match mockup; change to be dynamic to recipe
         goal_total.setText("2 1/3 Cups of Rice");
+        //I want line 103 to work, but it causes errors, will discuss friday.
+        //goal_total.setText(amount+" "+myunit);
         
     }
 
