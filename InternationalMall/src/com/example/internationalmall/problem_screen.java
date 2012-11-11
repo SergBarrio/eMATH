@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
+import android.os.CountDownTimer; 
 
 public class problem_screen extends Activity implements OnClickListener{
 
@@ -28,11 +29,23 @@ public class problem_screen extends Activity implements OnClickListener{
 	long startTime;
 	long elapseTime;
 	long elapseSecond;
-    @Override
+
+	TextView showtime; 
+	
+	@Override
+	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MyCount counter = new MyCount(21000,1000);
+        counter.start();
+        //Count down timer  
+        showtime = new TextView(this);
+        this.setContentView(showtime);
+        
+        //Timer fro results
         setContentView(R.layout.problem_screen);  
 		startTime = System.currentTimeMillis();
+		
         /*
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
@@ -97,6 +110,22 @@ public class problem_screen extends Activity implements OnClickListener{
         goal_total.setText("2 1/3 Cups of Rice");
         
     }
+	public class MyCount extends CountDownTimer{
+		public MyCount(long millisInFuture, long countDownInterval) {
+		super(millisInFuture, countDownInterval);
+		}
+		@Override
+		public void onTick(long millisUntilFinished) {
+	    showtime=(TextView)findViewById(R.id.showtime);
+		showtime.setText( String.valueOf(millisUntilFinished/1000) + " second remaining");
+		}
+		@Override
+		public void onFinish() {
+		showtime=(TextView)findViewById(R.id.showtime);
+		showtime.setText(":(");
+		}
+		
+	}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -116,7 +145,7 @@ public class problem_screen extends Activity implements OnClickListener{
     
     //if easy == 3, if medium == 6, if hard == 9
     public static int remaining_recipes=3; //default easy
-    
+     
 	//Collin
 	public static long[] times = new long[remaining_recipes];
 	public void onClick(View v) {
