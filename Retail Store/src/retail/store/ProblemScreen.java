@@ -19,7 +19,8 @@ public class ProblemScreen extends Activity {
 	    
 	    // right now there are 3 placeholder images in the layout
 	    // I made it so that the linearlayout has a weightSum of 100
-	    // to center all the items we just have to divide the number of items by 100 (3/100 = 33.33)
-	    // then set the images to all have that weight
+	    // to place items make sure the vertical linearLayout (rows not columns)
+	    // have equal weight. So to find the weight for 6 items, 100/6 = 16.66 on each layout
+	    
 	}
 }
