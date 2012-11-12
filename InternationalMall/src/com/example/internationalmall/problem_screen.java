@@ -10,6 +10,7 @@ import java.util.Random;
 import org.apache.commons.math.fraction.Fraction;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.app.Activity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,6 +34,7 @@ public class problem_screen extends Activity implements OnClickListener{
 	TextView cup1_text, cup2_text, cup3_text, cup4_text;
 	TextView cup1_size, cup2_size, cup3_size, cup4_size;
 	TextView goal_total;
+	TextView showtime;
 	
 	// Amount variables
 	int whole_amount;
@@ -65,12 +67,35 @@ public class problem_screen extends Activity implements OnClickListener{
 	long elapsedTime;
 	long elapsedSecond;
 	
+	public class MyCount extends CountDownTimer{
+		public MyCount(long millisInFuture, long countDownInterval) {
+			super(millisInFuture, countDownInterval);
+		}
+		@Override
+		public void onTick(long millisUntilFinished) {
+			showtime=(TextView)findViewById(R.id.showtime);
+			showtime.setText( String.valueOf(millisUntilFinished/1000) + " second remaining");
+		}
+		@Override
+		public void onFinish() {
+			showtime=(TextView)findViewById(R.id.showtime);
+			showtime.setText(":(");
+		}
+
+	}
+	
     @SuppressWarnings("unchecked")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*
+        MyCount counter = new MyCount(21000,1000);
+        counter.start();
+        //Count down timer
+        showtime = new TextView(this);
+        this.setContentView(showtime);
+        */
         setContentView(R.layout.problem_screen);
-        
         
 		order = (ArrayList<Recipe>)getIntent().getExtras().getSerializable("order");
         recipe = order.get((Integer)getIntent().getExtras().get("problem"));
