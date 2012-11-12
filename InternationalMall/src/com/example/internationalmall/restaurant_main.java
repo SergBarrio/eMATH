@@ -42,22 +42,32 @@ public class restaurant_main extends Activity implements OnClickListener{
 
 
 	public void onClick(View v) {
+		
 		if (v == easy) {
+			Score score = new Score(3);
 			GetOrder getOrder = new GetOrder(this,"easy");
 	        Intent start = new Intent(this, order_list.class);	
 	        start.putExtra("order", getOrder.getOrder());
+	        start.putExtra("difficulty", "easy");
+	        start.putExtra("score", score);
 	        startActivity(start);
 		}
 		if (v == medium) {
+			Score score = new Score(6);
 			GetOrder getOrder = new GetOrder(this,"medium");
 	        Intent start = new Intent(this, order_list.class);
 	        start.putExtra("order", getOrder.getOrder());
+	        start.putExtra("difficulty", "medium");
+	        start.putExtra("score", score);
 	        startActivity(start);
 		}
 		if (v == hard) {
-			GetOrder getOrder = new GetOrder(this,"easy");
+			Score score = new Score(9);
+			GetOrder getOrder = new GetOrder(this,"hard");
 	        Intent start = new Intent(this, order_list.class);
 	        start.putExtra("order", getOrder.getOrder());
+	        start.putExtra("difficulty", "hard");
+	        start.putExtra("score", score);
 	        startActivity(start);
 		}
 		

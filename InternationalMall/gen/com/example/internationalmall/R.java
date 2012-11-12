@@ -12,6 +12,7 @@ public final class R {
     }
     public static final class color {
         public static final int sandy_brown=0x7f060000;
+        public static final int white=0x7f060001;
     }
     public static final class drawable {
         public static final int cup=0x7f020000;
@@ -22,48 +23,50 @@ public final class R {
         public static final int shazz_drawing=0x7f020005;
     }
     public static final class id {
-        public static final int button=0x7f090028;
-        public static final int cup1=0x7f090008;
-        public static final int cup1_size=0x7f090006;
-        public static final int cup1_text=0x7f09000a;
-        public static final int cup2=0x7f090009;
-        public static final int cup2_size=0x7f090007;
-        public static final int cup2_text=0x7f09000b;
-        public static final int cup3=0x7f090012;
-        public static final int cup3_size=0x7f090010;
-        public static final int cup3_text=0x7f090014;
-        public static final int cup4=0x7f090013;
-        public static final int cup4_size=0x7f090011;
-        public static final int cup4_text=0x7f090015;
-        public static final int difficulty_title=0x7f09001e;
-        public static final int easy=0x7f09001d;
-        public static final int goal_total=0x7f090005;
-        public static final int hard=0x7f09001b;
-        public static final int medium=0x7f09001c;
-        public static final int menu_settings=0x7f090029;
-        public static final int minus_cup1=0x7f09000d;
-        public static final int minus_cup2=0x7f09000f;
-        public static final int minus_cup3=0x7f090017;
-        public static final int minus_cup4=0x7f090019;
-        public static final int mytextview10=0x7f090027;
-        public static final int mytextview3=0x7f090020;
-        public static final int mytextview5=0x7f090022;
-        public static final int mytextview6=0x7f090023;
-        public static final int mytextview7=0x7f090024;
-        public static final int mytextview8=0x7f090025;
-        public static final int mytextview9=0x7f090026;
-        public static final int plus_cup1=0x7f09000c;
-        public static final int plus_cup2=0x7f09000e;
-        public static final int plus_cup3=0x7f090016;
-        public static final int plus_cup4=0x7f090018;
+        public static final int button=0x7f09002a;
+        public static final int correct=0x7f090026;
+        public static final int cup1=0x7f09000c;
+        public static final int cup1_size=0x7f09000a;
+        public static final int cup1_text=0x7f09000e;
+        public static final int cup2=0x7f09000d;
+        public static final int cup2_size=0x7f09000b;
+        public static final int cup2_text=0x7f09000f;
+        public static final int cup3=0x7f090016;
+        public static final int cup3_size=0x7f090014;
+        public static final int cup3_text=0x7f090018;
+        public static final int cup4=0x7f090017;
+        public static final int cup4_size=0x7f090015;
+        public static final int cup4_text=0x7f090019;
+        public static final int difficulty_title=0x7f090022;
+        public static final int easy=0x7f090021;
+        public static final int goal_total=0x7f090009;
+        public static final int hard=0x7f09001f;
+        public static final int incorrect=0x7f090028;
+        public static final int medium=0x7f090020;
+        public static final int menu_settings=0x7f09002b;
+        public static final int minus_cup1=0x7f090011;
+        public static final int minus_cup2=0x7f090013;
+        public static final int minus_cup3=0x7f09001b;
+        public static final int minus_cup4=0x7f09001d;
+        public static final int num_correct=0x7f090027;
+        public static final int num_incorrect=0x7f090029;
+        public static final int plus_cup1=0x7f090010;
+        public static final int plus_cup2=0x7f090012;
+        public static final int plus_cup3=0x7f09001a;
+        public static final int plus_cup4=0x7f09001c;
         public static final int recipe_item_1=0x7f090000;
         public static final int recipe_item_2=0x7f090001;
         public static final int recipe_item_3=0x7f090002;
         public static final int recipe_item_4=0x7f090003;
         public static final int recipe_item_5=0x7f090004;
-        public static final int shazz_drawing=0x7f09001f;
-        public static final int submit=0x7f09001a;
-        public static final int time=0x7f090021;
+        public static final int recipe_item_6=0x7f090005;
+        public static final int recipe_item_7=0x7f090006;
+        public static final int recipe_item_8=0x7f090007;
+        public static final int recipe_item_9=0x7f090008;
+        public static final int shazz_drawing=0x7f090023;
+        public static final int submit=0x7f09001e;
+        public static final int time=0x7f090024;
+        public static final int time_solve=0x7f090025;
     }
     public static final class layout {
         public static final int order_list=0x7f030000;

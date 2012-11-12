@@ -10,6 +10,7 @@ import java.io.Serializable;
 
 public class Ingredient implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private Long recipe_id;
 	private Long ingredient_id;
 	private String name;

@@ -6,16 +6,18 @@
 package com.example.internationalmall;
 
 import java.io.Serializable;
-import java.util.Vector;
+import java.util.ArrayList;
 import org.json.JSONArray;
 
 public class Recipe implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private String id;			// ID in Kitchen Monki API
 	private Long recipe_id;		// ID in database
 	private String name;
 	private String cuisine;
 	private JSONArray array;
-	private Vector<Ingredient> ingredients = new Vector<Ingredient>();
+	private Boolean solved;
+	private ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
 	
 	public String getId() {
 		return id;
@@ -47,10 +49,16 @@ public class Recipe implements Serializable {
 	public void setArray(JSONArray array) {
 		this.array = array;
 	}
-	public Vector<Ingredient> getIngredients() {
+	public Boolean getSolved() {
+		return solved;
+	}
+	public void setSolved(Boolean solved) {
+		this.solved = solved;
+	}
+	public ArrayList<Ingredient> getIngredients() {
 		return ingredients;
 	}
-	public void setIngredients(Vector<Ingredient> ingredients) {
+	public void setIngredients(ArrayList<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 	}
 }

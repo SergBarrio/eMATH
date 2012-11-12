@@ -8,5 +8,6 @@
     <string name="title_results_screen">Results</string>
     <color name="sandy_brown">#EE9A4D</color>
     <string name="difficulty_title">Select Difficulty</string>
+    <color name="white">#FFFAD3</color>
 
 </resources>

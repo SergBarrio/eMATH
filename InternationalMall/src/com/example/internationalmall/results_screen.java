@@ -1,36 +1,21 @@
 package com.example.internationalmall;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import org.xmlpull.v1.XmlPullParserException;
-import java.util.*;
-import android.media.MediaPlayer;
+
 import android.os.Bundle;
-import android.os.Environment;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.DialogInterface;
 import android.content.Intent;
 
 
 public class results_screen extends Activity implements OnClickListener{
 
-	TextView time;
-	Button button;
-	//public List<long> alltimes = new ArrayList<long>();
-	public static long[] alltime= new long[problem_screen.remaining_recipes];
-	//TextView time;
-	//time=(TextView)findViewById(R.id.time);
-	//time.setText(eS);
+	private TextView time, correct, incorrect;
+	private Button button;
+	private Score score;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,25 +24,33 @@ public class results_screen extends Activity implements OnClickListener{
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
        
-        alltime = (long[])getIntent().getExtras().getSerializable("alltime");
+        score = (Score)getIntent().getExtras().get("score");
+        ArrayList<ArrayList<Long>> times = score.getTimes();
+        
+        correct = (TextView)findViewById(R.id.num_correct);
+        correct.setText(String.valueOf(score.getNumber_correct()));
+        
+        incorrect = (TextView)findViewById(R.id.num_incorrect);
+        incorrect.setText(String.valueOf(score.getNumber_incorrect()));
         
         long toltime = 0;
-        String scen;
+        String secn;
         String mint;
-        for (int i = 0; i<alltime.length; i++)
-        {
-        	long temp = alltime[i];
-        	toltime = toltime + temp;
-        	
+        
+        for (int i = 0; i<times.size(); i++) {
+        	for (int j=0; j<times.get(i).size(); j++) {
+        		long temp = times.get(i).get(j);
+        		toltime = toltime + temp;
+        	}
         }
         long min = toltime / 60;
         long sec = toltime % 60;
         if (sec < 10 ){
-        	scen = Long.toString(sec);
-        	scen = "0"+scen;
+        	secn = Long.toString(sec);
+        	secn = "0"+secn;
         }
         else 
-        	scen = Long.toString(sec);
+        	secn = Long.toString(sec);
         
         if (min < 10 ){
         	mint = Long.toString(min);
@@ -67,16 +60,9 @@ public class results_screen extends Activity implements OnClickListener{
         	mint = Long.toString(min);
 
         
-        time=(TextView)findViewById(R.id.time);
-        time.setText(mint + " : " + scen);
+        time=(TextView)findViewById(R.id.time_solve);
+        time.setText(mint + " : " + secn);
   
-  
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
     }
 
 	public void onClick(View v) {

@@ -1,77 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background = "@color/sandy_brown">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sandy_brown"
+    android:orientation="vertical" >
 
-    <TextView 
-    android:id="@+id/mytextview3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" 
-    android:text="Time :"
-    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-    <TextView 
-    android:id="@+id/time"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" 
-    android:layout_marginLeft="40dp"
-    
-    />
-    
-    <TextView 
-    android:id="@+id/mytextview5"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/mytextview3" 
-    android:text="Perfect Recipes :"
-    />
-    
-    <TextView 
-    android:id="@+id/mytextview6"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/mytextview3" 
-    android:layout_marginLeft="110dp"
-    android:text="3"
-    />
-    
-     <TextView 
-    android:id="@+id/mytextview7"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/mytextview5" 
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: " />
 
-    android:text="Acceptable Recipes :"
-    />
-     
-    <TextView 
-    android:id="@+id/mytextview8"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/mytextview5" 
-    android:layout_marginLeft="0dp"
-    android:text=""
-    />
-     
-     <TextView 
-    android:id="@+id/mytextview9"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/mytextview7" 
-    android:layout_marginLeft="0dp"
-    android:text="Failed Recipes :"
-    />
-     
-    <TextView 
-    android:id="@+id/mytextview10"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" 
-    android:layout_below="@+id/mytextview7" 
-    android:layout_marginLeft="0dp"
-    android:text=""
-    />
+        <TextView
+            android:id="@+id/time_solve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+    </LinearLayout>
+
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <TextView
+            android:id="@+id/correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correct Recipes: " />
+
+        <TextView
+            android:id="@+id/num_correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" >
+
+       <TextView
+           android:id="@+id/incorrect"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Incorrect Recipes: " />
+
+       <TextView
+           android:id="@+id/num_incorrect"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="TextView" />
+
+   </LinearLayout>
     
     <Button
         android:id="@+id/button"
@@ -79,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="171dp"
-        android:text="->Difficulty Screen" />
+        android:layout_marginTop="40dp"
+        android:text="Difficulty Screen" />
     
-</RelativeLayout>
+</LinearLayout>
