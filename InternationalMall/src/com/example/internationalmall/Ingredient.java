@@ -17,7 +17,7 @@ public class Ingredient implements Serializable {
 	private String unit;
 	private double amount;
 	
-	
+
 	public Long getRecipe_id() {
 		return recipe_id;
 	}

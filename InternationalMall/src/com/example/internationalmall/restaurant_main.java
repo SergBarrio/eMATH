@@ -10,12 +10,14 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.content.Intent;
 
 public class restaurant_main extends Activity implements OnClickListener{
 	Button easy;
 	Button medium;
 	Button hard;
+	static int difficulty;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,11 +31,17 @@ public class restaurant_main extends Activity implements OnClickListener{
         hard = (Button)findViewById(R.id.hard);
         hard.setOnClickListener(this);
         
+
         //ImageView image = (ImageView)findViewById(R.id.shazz_drawing);
         
         
-    }
 
+        ImageView image = (ImageView)findViewById(R.id.shazz_drawing);               
+
+    }
+    
+    
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
