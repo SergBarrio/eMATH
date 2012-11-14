@@ -114,9 +114,9 @@ public class problem_screen extends Activity implements OnClickListener{
 
         	if (number < 1 && number > 0) {
         		if (number == 0.33) {
-        			fraction_amount = new Fraction(0.3);
-        		} else {
         			fraction_amount = Fraction.ONE_THIRD;
+        		} else {
+        			fraction_amount = new Fraction(number);
         		}
         	}
 
