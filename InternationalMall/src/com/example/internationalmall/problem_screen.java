@@ -10,12 +10,14 @@ import java.util.Random;
 import org.apache.commons.math.fraction.Fraction;
 
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.os.CountDownTimer;
+=======
+>>>>>>> origin/retail
 import android.app.Activity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.content.Intent;
 
 public class problem_screen extends Activity implements OnClickListener{
@@ -88,6 +90,7 @@ public class problem_screen extends Activity implements OnClickListener{
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         /*
         MyCount counter = new MyCount(21000,1000);
         counter.start();
@@ -96,6 +99,42 @@ public class problem_screen extends Activity implements OnClickListener{
         this.setContentView(showtime);
         */
         setContentView(R.layout.problem_screen);
+=======
+        setContentView(R.layout.problem_screen);  
+		startTime = System.currentTimeMillis();
+        
+		/*
+        button = (Button)findViewById(R.id.button);
+        button.setOnClickListener(this);
+        */
+        submit = (Button)findViewById(R.id.submit);
+        submit.setOnClickListener(this);
+        
+        plus_cup1 = (Button)findViewById(R.id.plus_cup1);
+        plus_cup1.setOnClickListener(this);
+        minus_cup1 = (Button)findViewById(R.id.minus_cup1);
+        minus_cup1.setOnClickListener(this);
+        
+        plus_cup2 = (Button)findViewById(R.id.plus_cup2);
+        plus_cup2.setOnClickListener(this);
+        minus_cup2 = (Button)findViewById(R.id.minus_cup2);
+        minus_cup2.setOnClickListener(this);
+        
+        plus_cup3 = (Button)findViewById(R.id.plus_cup3);
+        plus_cup3.setOnClickListener(this);
+        minus_cup3 = (Button)findViewById(R.id.minus_cup3);
+        minus_cup3.setOnClickListener(this);
+        
+        plus_cup4 = (Button)findViewById(R.id.plus_cup4);
+        plus_cup4.setOnClickListener(this);
+        minus_cup4 = (Button)findViewById(R.id.minus_cup4);
+        minus_cup4.setOnClickListener(this);
+        
+        cup1_text=(TextView)findViewById(R.id.cup1_text);
+        cup2_text=(TextView)findViewById(R.id.cup2_text);
+        cup3_text=(TextView)findViewById(R.id.cup3_text);
+        cup4_text=(TextView)findViewById(R.id.cup4_text);
+>>>>>>> origin/retail
         
 		order = (ArrayList<Recipe>)getIntent().getExtras().getSerializable("order");
         recipe = order.get((Integer)getIntent().getExtras().get("problem"));
@@ -155,6 +194,7 @@ public class problem_screen extends Activity implements OnClickListener{
         	cup3_text.setText("0");
         	cup4_text.setText("0");
 
+<<<<<<< HEAD
         	cup1_size=(TextView)findViewById(R.id.cup1_size);
         	cup2_size=(TextView)findViewById(R.id.cup2_size);
         	cup3_size=(TextView)findViewById(R.id.cup3_size);
@@ -195,6 +235,23 @@ public class problem_screen extends Activity implements OnClickListener{
     	}
     }
     
+=======
+    //initialize background values of the cups and goal
+    public static int numClick_cup1,numClick_cup2,numClick_cup3,numClick_cup4;
+    
+    public static Fraction frac_cup1 = Fraction.ONE_HALF, 
+    				frac_cup2 = Fraction.ONE_THIRD, 
+    				frac_cup3 = Fraction.ONE_QUARTER, 
+    				frac_cup4 = Fraction.ONE_FIFTH;
+    
+    public static Fraction frac_goal = Fraction.ONE_THIRD.multiply(2);
+    
+    //if easy == 3, if medium == 6, if hard == 9
+    public static int remaining_recipes=3; //default easy
+    
+	//Collin
+	public static long[] times = new long[remaining_recipes];
+>>>>>>> origin/retail
 	public void onClick(View v) {
 		int click_id = v.getId();
 		
@@ -210,9 +267,7 @@ public class problem_screen extends Activity implements OnClickListener{
 			
 			if (frac_response.equals(result)) { correct = true; }
 			
-			Toast.makeText(v.getContext(),
-			        String.valueOf(correct),
-			        Toast.LENGTH_LONG).show();
+			System.out.println(correct);
 			
 			if (correct) {
 				score.setNumber_correct(score.getNumber_correct()+1);
