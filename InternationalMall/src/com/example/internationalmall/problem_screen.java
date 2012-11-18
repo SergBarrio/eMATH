@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.content.Intent;
+import android.widget.Button;
 
 public class problem_screen extends Activity implements OnClickListener{
 	
@@ -94,34 +95,7 @@ public class problem_screen extends Activity implements OnClickListener{
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
         */
-        submit = (Button)findViewById(R.id.submit);
-        submit.setOnClickListener(this);
-        
-        plus_cup1 = (Button)findViewById(R.id.plus_cup1);
-        plus_cup1.setOnClickListener(this);
-        minus_cup1 = (Button)findViewById(R.id.minus_cup1);
-        minus_cup1.setOnClickListener(this);
-        
-        plus_cup2 = (Button)findViewById(R.id.plus_cup2);
-        plus_cup2.setOnClickListener(this);
-        minus_cup2 = (Button)findViewById(R.id.minus_cup2);
-        minus_cup2.setOnClickListener(this);
-        
-        plus_cup3 = (Button)findViewById(R.id.plus_cup3);
-        plus_cup3.setOnClickListener(this);
-        minus_cup3 = (Button)findViewById(R.id.minus_cup3);
-        minus_cup3.setOnClickListener(this);
-        
-        plus_cup4 = (Button)findViewById(R.id.plus_cup4);
-        plus_cup4.setOnClickListener(this);
-        minus_cup4 = (Button)findViewById(R.id.minus_cup4);
-        minus_cup4.setOnClickListener(this);
-        
-        cup1_text=(TextView)findViewById(R.id.cup1_text);
-        cup2_text=(TextView)findViewById(R.id.cup2_text);
-        cup3_text=(TextView)findViewById(R.id.cup3_text);
-        cup4_text=(TextView)findViewById(R.id.cup4_text);
-        
+ 
 		order = (ArrayList<Recipe>)getIntent().getExtras().getSerializable("order");
         recipe = order.get((Integer)getIntent().getExtras().get("problem"));
         ingredient_num = (Integer)getIntent().getExtras().get("ingredient");
