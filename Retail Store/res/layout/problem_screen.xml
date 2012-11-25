@@ -148,35 +148,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@+string/static_customer"
-            android:src="@drawable/cust_static" />
+            android:src="@drawable/customer_yellow" />
 
         <ImageView
             android:id="@+id/cust_image4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@+string/static_customer"
-            android:src="@drawable/cust_static" />
+            android:src="@drawable/customer_pink" />
 
         <ImageView
             android:id="@+id/cust_image3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@+string/static_customer"
-            android:src="@drawable/cust_static" />
+            android:src="@drawable/customer_white" />
 
         <ImageView
             android:id="@+id/cust_image2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@+string/static_customer"
-            android:src="@drawable/cust_static" />
-
+            android:src="@drawable/customer_purple" />
+
         <ImageView
             android:id="@+id/cust_image1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@+string/static_customer"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/customer_dark_green" />
 
     </LinearLayout>
 

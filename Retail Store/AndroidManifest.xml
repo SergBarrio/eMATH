@@ -26,6 +26,9 @@
         <activity
             android:name=".ProblemScreen" >
         </activity>
+        <activity
+            android:name=".ResultsScreen" >
+        </activity>
     </application>
 
 </manifest>

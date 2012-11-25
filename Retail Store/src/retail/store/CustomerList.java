@@ -18,7 +18,7 @@ public class CustomerList extends Activity implements OnClickListener {
 	    setContentView(R.layout.activity_retail_customers);
 	    
 	    //first set up list
-	    ListView customer_screen = (ListView) findViewById(R.id.customer_list);
+	    //ListView customer_screen = (ListView) findViewById(R.id.customer_list);
 	    
 	    String[] customerArray = new String[4];
 	    
@@ -31,12 +31,12 @@ public class CustomerList extends Activity implements OnClickListener {
 		BlockedList customer_list = 
 				new BlockedList(this, android.R.layout.simple_list_item_1, customerArray);
 		
-		customer_screen.setAdapter(customer_list);
+		//customer_screen.setAdapter(customer_list);
 		
 		//set start button
 		Button start_button;
-		start_button = (Button)findViewById(R.id.startbutton);
-		start_button.setOnClickListener(this);
+		//start_button = (Button)findViewById(R.id.startbutton);
+		//start_button.setOnClickListener(this);
 		
 	}
 	

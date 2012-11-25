@@ -19,18 +19,23 @@ public final class R {
     }
     public static final class drawable {
         public static final int cust_static=0x7f020000;
-        public static final int fruit=0x7f020001;
-        public static final int fruit_small=0x7f020002;
-        public static final int glasses=0x7f020003;
-        public static final int glasses_small=0x7f020004;
-        public static final int ic_action_search=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int imac=0x7f020007;
-        public static final int imac_small=0x7f020008;
-        public static final int shirt=0x7f020009;
-        public static final int shopping_cart_2=0x7f02000a;
-        public static final int water=0x7f02000b;
-        public static final int water_small=0x7f02000c;
+        public static final int customer_blue=0x7f020001;
+        public static final int customer_dark_green=0x7f020002;
+        public static final int customer_green=0x7f020003;
+        public static final int customer_orange=0x7f020004;
+        public static final int customer_pink=0x7f020005;
+        public static final int customer_purple=0x7f020006;
+        public static final int customer_red=0x7f020007;
+        public static final int customer_white=0x7f020008;
+        public static final int customer_yellow=0x7f020009;
+        public static final int fruit_small=0x7f02000a;
+        public static final int glasses_small=0x7f02000b;
+        public static final int ic_action_search=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int imac_small=0x7f02000e;
+        public static final int shirt=0x7f02000f;
+        public static final int shopping_cart_2=0x7f020010;
+        public static final int water_small=0x7f020011;
     }
     public static final class id {
         public static final int answerbox=0x7f09000f;
@@ -39,7 +44,6 @@ public final class R {
         public static final int cust_image3=0x7f090014;
         public static final int cust_image4=0x7f090013;
         public static final int cust_image5=0x7f090012;
-        public static final int customer_list=0x7f090000;
         public static final int customer_queue=0x7f090011;
         public static final int easy_button=0x7f090004;
         public static final int hard_button=0x7f090006;
@@ -54,7 +58,8 @@ public final class R {
         public static final int item_name_cost=0x7f090007;
         public static final int medium_button=0x7f090005;
         public static final int menu_settings=0x7f090017;
-        public static final int startbutton=0x7f090001;
+        public static final int restart_button=0x7f090001;
+        public static final int results=0x7f090000;
         public static final int submitbutton=0x7f090010;
         public static final int textView1=0x7f090002;
     }
@@ -62,6 +67,7 @@ public final class R {
         public static final int activity_retail_customers=0x7f030000;
         public static final int activity_retail_main=0x7f030001;
         public static final int problem_screen=0x7f030002;
+        public static final int results_screen=0x7f030003;
     }
     public static final class menu {
         public static final int activity_retail_main=0x7f080000;
@@ -75,8 +81,8 @@ public final class R {
         public static final int hard=0x7f050007;
         public static final int medium=0x7f050006;
         public static final int menu_settings=0x7f050001;
+        public static final int restart=0x7f050008;
         public static final int selectdiff=0x7f050004;
-        public static final int start=0x7f050008;
         public static final int static_customer=0x7f05000a;
     }
     public static final class style {

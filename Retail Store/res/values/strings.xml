@@ -9,6 +9,6 @@
     <string name="easy">Easy</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
-    <string name="start">Start</string>
+    <string name="restart">Restart...</string>
 
 </resources>
