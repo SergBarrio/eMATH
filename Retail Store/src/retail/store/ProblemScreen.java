@@ -41,8 +41,8 @@ public class ProblemScreen extends Activity {
 	    item6.setText("Apple - $5", null);
 	    
 	    //set top drawable for items
-	    item4.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.water_small, 0, 0);
-	    item5.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.shirt, 0, 0);
+	    item4.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.icons_7, 0, 0);
+	    item5.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.icons_1, 0, 0);
 	    
 	    //set customer queue
 	    customer1 = (ImageView)findViewById(R.id.cust_image1);

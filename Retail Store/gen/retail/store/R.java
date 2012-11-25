@@ -28,14 +28,16 @@ public final class R {
         public static final int customer_red=0x7f020007;
         public static final int customer_white=0x7f020008;
         public static final int customer_yellow=0x7f020009;
-        public static final int fruit_small=0x7f02000a;
-        public static final int glasses_small=0x7f02000b;
-        public static final int ic_action_search=0x7f02000c;
-        public static final int ic_launcher=0x7f02000d;
-        public static final int imac_small=0x7f02000e;
-        public static final int shirt=0x7f02000f;
-        public static final int shopping_cart_2=0x7f020010;
-        public static final int water_small=0x7f020011;
+        public static final int ic_action_search=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int icons_1=0x7f02000c;
+        public static final int icons_2=0x7f02000d;
+        public static final int icons_3=0x7f02000e;
+        public static final int icons_4=0x7f02000f;
+        public static final int icons_5=0x7f020010;
+        public static final int icons_6=0x7f020011;
+        public static final int icons_7=0x7f020012;
+        public static final int shopping_cart_2=0x7f020013;
     }
     public static final class id {
         public static final int answerbox=0x7f09000f;
