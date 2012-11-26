@@ -27,15 +27,24 @@ public class RetailMain extends Activity implements OnClickListener{
 
 	public void onClick(View v) {
 		if (v == easy_button){
-			Intent problemStart = new Intent(this, ProblemScreen.class);
+			GetPurchases getPurchases = new GetPurchases(this,"easy");
+			Intent problemStart = new Intent(this, ProblemScreen.class);			
+			problemStart.putExtra("purchases", getPurchases.getPurchases());
+			problemStart.putExtra("difficulty", "easy");
 			startActivity(problemStart);
 		}
 		if (v == medium_button){
-			Intent problemStart = new Intent(this, ProblemScreen.class);
+			GetPurchases getPurchases = new GetPurchases(this,"medium");
+			Intent problemStart = new Intent(this, ProblemScreen.class);			
+			problemStart.putExtra("purchases", getPurchases.getPurchases());
+			problemStart.putExtra("difficulty", "medium");
 			startActivity(problemStart);
 		}
 		if (v == hard_button){
-			Intent problemStart = new Intent(this, ProblemScreen.class);
+			GetPurchases getPurchases = new GetPurchases(this,"hard");
+			Intent problemStart = new Intent(this, ProblemScreen.class);		
+			problemStart.putExtra("purchases", getPurchases.getPurchases());
+			problemStart.putExtra("difficulty", "hard");
 			startActivity(problemStart);
 		}
 
