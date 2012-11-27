@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="@string/selectdiff"
+        android:layout_marginTop="50dp"
+        android:text="Select Difficulty"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
@@ -21,7 +21,7 @@
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:contentDescription="@+string/cart"
-        android:src="@drawable/shopping_cart_2" />
+        android:src="@drawable/cart" />
 
     <Button
         android:id="@+id/easy_button"
