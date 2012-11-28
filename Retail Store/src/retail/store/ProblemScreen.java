@@ -1,5 +1,7 @@
 package retail.store;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,34 +17,35 @@ public class ProblemScreen extends Activity {
 	ImageView customer1, customer2, customer3, customer4, customer5;
 	TextView customer_num;
 	Integer num_correct = 1;
+	private int[] itemIDs = {R.id.item1, R.id.item2, R.id.item3, R.id.item4, R.id.item5, R.id.item6};
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	    setContentView(R.layout.problem_screen);
-	    
+
 	    customer_num = (TextView)findViewById(R.id.item_name_cost);
 	    String customer_ident = "Customer #1";
 	    customer_num.setText(customer_ident);
 	    
-	    //set items
-	    TextView item1 = (TextView)findViewById(R.id.item1);
-	    TextView item2 = (TextView)findViewById(R.id.item2);
-	    TextView item3 = (TextView)findViewById(R.id.item3);
-	    TextView item4 = (TextView)findViewById(R.id.item4);
-	    TextView item5 = (TextView)findViewById(R.id.item5);
-	    TextView item6 = (TextView)findViewById(R.id.item6);
+	    //take problem that has been generated
+	    Problem problem = (Problem)getIntent().getExtras().get("problem");
+	    ArrayList<ArrayList<Item>> problemList = problem.getProblem();
+	    int problem_index = (Integer)getIntent().getExtras().get("index");
 	    
-	    item1.setText("Bannana - $5", null);
-	    item2.setText("Laptop - $5", null);
-	    item3.setText("Wallet - $5", null);
-	    item4.setText("Soda - $5", null);
-	    item5.setText("Gloves - $5", null);
-	    item6.setText("Apple - $5", null);
+	    ArrayList<Item> curr_problem = problemList.get(problem_index);
+	    for (int i=0; i < curr_problem.size(); i++){
+	    	//format double to 2 decimal places
+	    	TextView item = (TextView)findViewById(itemIDs[i]);
+	    	item.setText(curr_problem.get(i).getName() 
+	    	+ "\n$" + curr_problem.get(i).getPrice() 
+	    	+ " x " + curr_problem.get(i).getQuantity());
+	    }
 	    
-	    //set top drawable for items
-	    item4.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.icons_7, 0, 0);
-	    item5.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.icons_1, 0, 0);
+	    for (int j=curr_problem.size()-1; j < itemIDs.length; j++) {
+	    	TextView item = (TextView)findViewById(itemIDs[j]);
+	    	item.setVisibility(View.GONE);
+	    }
 	    
 	    //set customer queue
 	    customer1 = (ImageView)findViewById(R.id.cust_image1);

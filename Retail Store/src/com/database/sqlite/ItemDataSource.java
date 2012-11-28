@@ -2,9 +2,6 @@ package com.database.sqlite;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-
-import retail.store.*;
 
 import retail.store.Item;
 
@@ -83,13 +80,14 @@ public class ItemDataSource {
 		return items;
 	}*/
 	
-	public ArrayList<Item> getItems(int number) {
-		ArrayList<Item> items = new ArrayList<Item>();
-		Cursor cursor = database.rawQuery("select * from items order by random() limit " + number + ";", null);
+	public ArrayList<String> getItems(int number, String category) {
+		ArrayList<String> items = new ArrayList<String>();
+		Cursor cursor = database.rawQuery("select * from Retail where Category = \'" + category
+				+ "\' order by random() limit " + number + ";", null);
 		
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
-			Item item = cursorToItem(cursor);
+			String item = cursorToItem(cursor);
 			items.add(item);
 			cursor.moveToNext();
 		}
@@ -98,12 +96,35 @@ public class ItemDataSource {
 		return items;
 	}
 
-	private Item cursorToItem(Cursor cursor) {
+	public ArrayList<String> getCategories(int number) {
+		ArrayList<String> items = new ArrayList<String>();
+		Cursor cursor = database.rawQuery("select * from Retail order by random() limit " + number + ";", null);
+		
+		cursor.moveToFirst();
+		while (!cursor.isAfterLast()) {
+			String item = cursorToCategory(cursor);
+			items.add(item);
+			cursor.moveToNext();
+		}
+		
+		cursor.close();
+		return items;
+	}
+	
+	private String cursorToItem(Cursor cursor) {
 		Item item = new Item();
 		item.setItem_id(cursor.getLong(0));
 		item.setName(cursor.getString(1));
 		item.setCategory(cursor.getString(2));
-		return item;
+		return cursor.getString(1);
+	}
+	
+	private String cursorToCategory(Cursor cursor) {
+		Item item = new Item();
+		item.setItem_id(cursor.getLong(0));
+		item.setName(cursor.getString(1));
+		item.setCategory(cursor.getString(2));
+		return cursor.getString(2);
 	}
 	
 	

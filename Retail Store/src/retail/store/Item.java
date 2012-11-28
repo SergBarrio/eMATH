@@ -8,13 +8,21 @@ package retail.store;
 
 import java.io.Serializable;
 
-public class Item {
+public class Item implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String name;
 	private String category;
 	private double price;
+	private int quantity;
+	
+	public Item(){}
+	
+	public Item(int quantity, double price){
+		this.quantity = quantity;
+		this.price = price;
+	}
 	
 
 	public Long getItem_id() {
@@ -40,6 +48,12 @@ public class Item {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 }

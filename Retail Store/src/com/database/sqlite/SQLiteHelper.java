@@ -25,7 +25,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
     private SQLiteDatabase myDataBase;
     private static Context context;
-    private static String DB_PATH = "/data/data/"+context.getApplicationContext().getPackageName()+"/databases/";
+    private static String DB_PATH = "/data/data/retail.store/databases/";
 	public SQLiteHelper(Context context) {
 		super(context, DB_NAME, null, DATABASE_VERSION);
 		this.context = context;

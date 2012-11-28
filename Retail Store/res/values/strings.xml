@@ -9,7 +9,7 @@
     <string name="easy">Easy</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
-    <string name="restart">Restart...</string>
+    <string name="restart">Restart&#8230;</string>
     <string name="activity_splash">Retail Store</string>
 
 </resources>
