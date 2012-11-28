@@ -11,8 +11,8 @@ public class Score implements Serializable {
 	private int number_correct_recipes;
 	private int number_incorrect_recipes;
 	private double score;
-	private ArrayList<ArrayList<Integer> > options = new ArrayList<ArrayList<Integer>>();
-	private ArrayList<ArrayList<Long> > times = new ArrayList<ArrayList<Long>>();
+	private ArrayList<ArrayList<Integer>> options;
+	private ArrayList<ArrayList<Long>> times;
 
 	public Score(int recipes) {
 		this.number_correct_recipes = 0;
@@ -20,12 +20,8 @@ public class Score implements Serializable {
 		this.number_correct_ingredients = 0;
 		this.number_incorrect_ingredients = 0;
 		this.score = 0.0;
-		ArrayList<Long> ingredients = new ArrayList<Long>();
-		ArrayList<Integer> option = new ArrayList<Integer>();
-		for (int i=0;i<recipes;i++) {
-			this.times.add(ingredients);
-			this.options.add(option);
-		}
+		options = new ArrayList<ArrayList<Integer>>();
+		times = new ArrayList<ArrayList<Long>>();
 	}
 	
 	public int getNumberCorrectIngredients() {
@@ -70,7 +66,8 @@ public class Score implements Serializable {
 	}
 
 	public void setTimes(long time, int recipe) {
-		this.times.get(recipe).add(time);
+		ArrayList<Long> array = this.times.get(recipe);
+		array.set(array.size(),time);
 	}
 	
 	public ArrayList<ArrayList<Integer>> getOptions() {
@@ -78,6 +75,7 @@ public class Score implements Serializable {
 	}
 
 	public void setOptions(int usage, int recipe) {
-		this.options.get(recipe).add(usage);
+		ArrayList<Integer> array = this.options.get(recipe);
+		array.set(array.size(),usage);
 	}
 }

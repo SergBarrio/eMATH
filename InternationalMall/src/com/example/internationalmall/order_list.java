@@ -43,6 +43,16 @@ public class order_list extends Activity implements OnClickListener{
         recipes = (ArrayList<Recipe>)getIntent().getExtras().getSerializable("order");
         score = (Score)getIntent().getExtras().getSerializable("score");
         
+        ArrayList<Long> times = (ArrayList<Long>)getIntent().getExtras().getSerializable("times");
+        ArrayList<Integer> options = (ArrayList<Integer>)getIntent().getExtras().getSerializable("options");
+        
+        if (times.size() != 0) {
+        	score.getTimes().add(times);
+        }
+        if (options.size() != 0) {
+        	score.getOptions().add(options);
+        }
+        
         int solved = 0;
         for (int i=0; i<recipes.size(); i++) {
         	recipe_item = (TextView)findViewById(button_ids[i]);
@@ -128,6 +138,8 @@ public class order_list extends Activity implements OnClickListener{
         	start.putExtra("difficulty", difficulty);
         	start.putExtra("correct_ingredients", 0);
         }
+    	start.putExtra("times", new ArrayList<ArrayList<Long>>());
+    	start.putExtra("options", new ArrayList<ArrayList<Integer>>());
 		startActivity(start);
 	}
 	

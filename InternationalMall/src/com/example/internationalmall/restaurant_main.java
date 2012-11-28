@@ -4,6 +4,8 @@
  */
 package com.example.internationalmall;
 
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -48,7 +50,9 @@ public class restaurant_main extends Activity implements OnClickListener{
 		if (v == easy) {
 			Score score = new Score(3);
 			GetOrder getOrder = new GetOrder(this);
-	        Intent start = new Intent(this, order_list.class);	
+	        Intent start = new Intent(this, order_list.class);
+	        start.putExtra("times", new ArrayList<ArrayList<Long>>());
+	    	start.putExtra("options", new ArrayList<ArrayList<Integer>>());
 	        start.putExtra("order", getOrder.getOrder());
 	        start.putExtra("correct_ingredients", 0);
 	        start.putExtra("difficulty", "easy");
@@ -59,6 +63,8 @@ public class restaurant_main extends Activity implements OnClickListener{
 			Score score = new Score(3);
 			GetOrder getOrder = new GetOrder(this);
 	        Intent start = new Intent(this, order_list.class);
+	        start.putExtra("times", new ArrayList<ArrayList<Long>>());
+	    	start.putExtra("options", new ArrayList<ArrayList<Integer>>());
 	        start.putExtra("order", getOrder.getOrder());
 	        start.putExtra("correct_ingredients", 0);
 	        start.putExtra("difficulty", "medium");
@@ -69,6 +75,8 @@ public class restaurant_main extends Activity implements OnClickListener{
 			Score score = new Score(3);
 			GetOrder getOrder = new GetOrder(this);
 	        Intent start = new Intent(this, order_list.class);
+	        start.putExtra("times", new ArrayList<ArrayList<Long>>());
+	    	start.putExtra("options", new ArrayList<ArrayList<Integer>>());
 	        start.putExtra("order", getOrder.getOrder());
 	        start.putExtra("correct_ingredients", 0);
 	        start.putExtra("difficulty", "hard");

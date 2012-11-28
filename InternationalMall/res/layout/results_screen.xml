@@ -23,6 +23,8 @@
             android:id="@+id/imageView1"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:src="@drawable/history" />
 
         <TextView
@@ -30,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/imageView1"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="5dp"
             android:text="TextView"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -40,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView1"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="5dp"
             android:src="@drawable/checkmark" />
 
@@ -50,7 +53,7 @@
             android:layout_toRightOf="@+id/imageView2"
             android:layout_below="@+id/time_solve"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="TextView"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -58,6 +61,7 @@
             android:id="@+id/imageView3"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
             android:layout_below="@+id/imageView2"
             android:src="@drawable/chart_bar" />
 
@@ -68,7 +72,7 @@
             android:layout_toRightOf="@+id/imageView3"
             android:layout_below="@+id/pct_correct"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="TextView"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 

@@ -343,9 +343,13 @@ public class problem_screen extends Activity implements OnClickListener{
     	}
     }
     
-    private int calculateUsage() {
+    private int calculateUsage(boolean correct) {
     	
     	int options_used = 0;
+    	
+    	if (!correct) {
+    		return options_used;
+    	}
     	
     	if (numClick_cup1 != 0) {
     		options_used++;
@@ -391,6 +395,10 @@ public class problem_screen extends Activity implements OnClickListener{
 			
 			int remaining_ingredients = recipe.getIngredients().size()-ingredient_num-1;
 			
+			ArrayList<Long> times = (ArrayList<Long>)getIntent().getExtras().getSerializable("times");
+			ArrayList<Integer> options = (ArrayList<Integer>)getIntent().getExtras().getSerializable("options");
+			int usage = calculateUsage(correct);
+			
 			// Continue game logic
 			numClick_cup1=numClick_cup2=numClick_cup3=numClick_cup4=0;
 			if (remaining_ingredients > 0 && remaining_recipes > 0){
@@ -399,9 +407,11 @@ public class problem_screen extends Activity implements OnClickListener{
 				endTime = System.currentTimeMillis();
 				elapsedTime =  endTime - startTime;
 				elapsedSecond = elapsedTime / 1000;
-				score.setTimes(elapsedSecond, problem);
-				score.setOptions(calculateUsage(), problem);
+				times.add(elapsedSecond);
+				options.add(usage);
 				order.get((Integer)getIntent().getExtras().get("problem")).setSolved(true);
+				start.putExtra("times", times);
+				start.putExtra("options", options);
 				start.putExtra("correct_ingredients", correct_ingredients);
 				start.putExtra("difficulty", difficulty);
 				start.putExtra("remaining_recipes", remaining_recipes);
@@ -417,9 +427,11 @@ public class problem_screen extends Activity implements OnClickListener{
 				endTime = System.currentTimeMillis();
 				elapsedTime = endTime - startTime;
 				elapsedSecond = elapsedTime / 1000;
-				score.setTimes(elapsedSecond, problem);
-				score.setOptions(calculateUsage(), problem);
+				times.add(elapsedSecond);
+				options.add(usage);
 				order.get((Integer)getIntent().getExtras().get("problem")).setSolved(true);
+				start.putExtra("times", times);
+				start.putExtra("options", options);
 				start.putExtra("correct_ingredients", correct_ingredients);
 				start.putExtra("difficulty", difficulty);
 				start.putExtra("remaining_recipes", remaining_recipes);
@@ -429,14 +441,15 @@ public class problem_screen extends Activity implements OnClickListener{
 				startActivity(start);
 			}
 			else if (remaining_ingredients == 0 && remaining_recipes == 1){
-				int problem = (Integer)getIntent().getExtras().get("problem");
 				Intent start = new Intent(this, results_screen.class);
 				endTime = System.currentTimeMillis();
 				elapsedTime = endTime - startTime;
 				elapsedSecond = elapsedTime / 1000;
-				score.setTimes(elapsedSecond, problem);
-				score.setOptions(calculateUsage(), problem);
+				times.add(elapsedSecond);
+				options.add(usage);
 				order.get((Integer)getIntent().getExtras().get("problem")).setSolved(true);
+				score.getTimes().add(times);
+				score.getOptions().add(options);
 				start.putExtra("difficulty", difficulty);
 				start.putExtra("score", score);
 				startActivity(start);

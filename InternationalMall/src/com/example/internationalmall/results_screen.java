@@ -1,5 +1,6 @@
 package com.example.internationalmall;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import android.os.Bundle;
@@ -22,7 +23,8 @@ public class results_screen extends Activity implements OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.results_screen);   
+        setContentView(R.layout.results_screen);
+        
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(this);
         
@@ -38,7 +40,8 @@ public class results_screen extends Activity implements OnClickListener{
         
         pct_correct = (TextView)findViewById(R.id.pct_correct);
         int total = score.getNumberCorrectRecipes()+score.getNumberIncorrectRecipes();
-        pct_correct.setText(String.valueOf((double)score.getNumberCorrectRecipes()/(double)total) + "% correct.");
+        int pct_score = (int)((double)score.getNumberCorrectRecipes()*100/(double)total);
+        pct_correct.setText(String.valueOf(pct_score) + "% correct.");
         
         double avg_options = 0.0;
         for (int i=0; i<options.size(); i++) {
@@ -48,14 +51,14 @@ public class results_screen extends Activity implements OnClickListener{
         }
         
         options_used = (TextView)findViewById(R.id.options_used);
-        options_used.setText(String.valueOf(avg_options) + "% options used");
+        options_used.setText(String.valueOf((int)(avg_options*100)) + "% options used");
         
         long toltime = 0;
         int num_of_problems = 0;
         for (int i=0; i<times.size(); i++) {
         	for (int j=0; j<times.get(i).size(); j++) {
         		long temp = times.get(i).get(j);
-        		temp -= 5000;
+        		temp -= 5;
         		if (temp < 0) {
         			temp = 0;
         		}
@@ -66,11 +69,11 @@ public class results_screen extends Activity implements OnClickListener{
         
         long time_per_question = 0;
         if (difficulty.equalsIgnoreCase("easy")) {
-        	time_per_question = 25000;
+        	time_per_question = 25;
         } else if (difficulty.equalsIgnoreCase("medium")) {
-        	time_per_question = 20000;
+        	time_per_question = 20;
         } else {
-        	time_per_question = 15000;
+        	time_per_question = 15;
         }
         
         long max_time = time_per_question * num_of_problems;
@@ -78,8 +81,8 @@ public class results_screen extends Activity implements OnClickListener{
         double pect_time = (double)toltime/(double)max_time;
         long avg_time = toltime/num_of_problems;
         
-        String time_percent = Double.toString(pect_time);
-        String average = Double.toString((double)avg_time/1000);
+        String time_percent = Integer.toString((int)(pect_time*100));
+        String average = Double.toString((double)avg_time);
         
         time=(TextView)findViewById(R.id.time_solve);
         time.setText(time_percent + "% of time allowed.");
