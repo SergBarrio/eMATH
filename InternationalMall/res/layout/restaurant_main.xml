@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
-    android:background = "@color/sandy_brown">
+    android:background="@drawable/tiled_main_background">
 
     <Button
         android:id="@+id/hard"
@@ -22,7 +22,7 @@
         android:layout_alignBottom="@+id/hard"
         android:layout_marginBottom="118dp"
         android:layout_centerHorizontal="true"
-        android:text="Medium"/>
+        android:text="Medium" />
 
     <Button
         android:id="@+id/easy"

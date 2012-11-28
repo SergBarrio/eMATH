@@ -12,12 +12,10 @@ import com.database.sqlite.RecipesDataSource;
 public class GetOrder {
 	
 	private Context context;
-	private	String difficulty;
 	private RecipesDataSource recipes_data_source;
 	private IngredientsDataSource ingredients_data_source;
 	
-	public GetOrder(Context context, String difficulty) {
-		this.difficulty = difficulty;
+	public GetOrder(Context context) {
 		this.context = context;
 	}
 	
@@ -36,30 +34,14 @@ public class GetOrder {
 			e.printStackTrace();
 		}
 		ingredients_data_source.open();
+
+		recipes = recipes_data_source.getRecipes(3);
 		
-		if (difficulty.equalsIgnoreCase("easy")) {
-			recipes = recipes_data_source.getRecipes(3);
-			
-			for (int i=0;i<recipes.size();i++) {
-				recipes.get(i).setIngredients(ingredients_data_source.getIngredients(recipes.get(i).getRecipe_id()));
-				recipes.get(i).setSolved(false);
-			}
-		} else if (difficulty.equalsIgnoreCase("medium")) {
-			recipes = recipes_data_source.getRecipes(6);
-			
-			for (int i=0;i<recipes.size();i++) {
-				recipes.get(i).setIngredients(ingredients_data_source.getIngredients(recipes.get(i).getRecipe_id()));
-				recipes.get(i).setSolved(false);
-			}
-		} else if (difficulty.equalsIgnoreCase("hard")) {
-			recipes = recipes_data_source.getRecipes(9);
-			
-			for (int i=0;i<recipes.size();i++) {
-				recipes.get(i).setIngredients(ingredients_data_source.getIngredients(recipes.get(i).getRecipe_id()));
-				recipes.get(i).setSolved(false);			
-			}
+		for (int i=0;i<recipes.size();i++) {
+			recipes.get(i).setIngredients(ingredients_data_source.getIngredients(recipes.get(i).getRecipe_id()));
+			recipes.get(i).setSolved(false);
 		}
-		
+			
 		recipes_data_source.close();
 		ingredients_data_source.close();
 		

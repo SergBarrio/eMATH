@@ -8,9 +8,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.content.Intent;
 
 public class restaurant_main extends Activity implements OnClickListener{
@@ -22,6 +22,7 @@ public class restaurant_main extends Activity implements OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.restaurant_main);
         
         easy = (Button)findViewById(R.id.easy);
@@ -30,17 +31,7 @@ public class restaurant_main extends Activity implements OnClickListener{
         medium.setOnClickListener(this);
         hard = (Button)findViewById(R.id.hard);
         hard.setOnClickListener(this);
-        
-
-        //ImageView image = (ImageView)findViewById(R.id.shazz_drawing);
-        
-        
-
-        ImageView image = (ImageView)findViewById(R.id.shazz_drawing);               
-
     }
-    
-    
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,32 +39,38 @@ public class restaurant_main extends Activity implements OnClickListener{
         return true;
     }
 
-
+    @Override
+    public void onBackPressed() {
+    }
+    
 	public void onClick(View v) {
 		
 		if (v == easy) {
 			Score score = new Score(3);
-			GetOrder getOrder = new GetOrder(this,"easy");
+			GetOrder getOrder = new GetOrder(this);
 	        Intent start = new Intent(this, order_list.class);	
 	        start.putExtra("order", getOrder.getOrder());
+	        start.putExtra("correct_ingredients", 0);
 	        start.putExtra("difficulty", "easy");
 	        start.putExtra("score", score);
 	        startActivity(start);
 		}
 		if (v == medium) {
-			Score score = new Score(6);
-			GetOrder getOrder = new GetOrder(this,"medium");
+			Score score = new Score(3);
+			GetOrder getOrder = new GetOrder(this);
 	        Intent start = new Intent(this, order_list.class);
 	        start.putExtra("order", getOrder.getOrder());
+	        start.putExtra("correct_ingredients", 0);
 	        start.putExtra("difficulty", "medium");
 	        start.putExtra("score", score);
 	        startActivity(start);
 		}
 		if (v == hard) {
-			Score score = new Score(9);
-			GetOrder getOrder = new GetOrder(this,"hard");
+			Score score = new Score(3);
+			GetOrder getOrder = new GetOrder(this);
 	        Intent start = new Intent(this, order_list.class);
 	        start.putExtra("order", getOrder.getOrder());
+	        start.putExtra("correct_ingredients", 0);
 	        start.putExtra("difficulty", "hard");
 	        start.putExtra("score", score);
 	        startActivity(start);
