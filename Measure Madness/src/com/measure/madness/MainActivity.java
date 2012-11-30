@@ -22,6 +22,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -58,7 +59,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 	
 	private ArrayList<ArrayList<Star>> callParser() {
-		
+		/*
 		// Check if configuration file is available from SDCard
 		int mExternalStorageAvailable = 0;
         int mExternalStorageWriteable = 0;
@@ -91,17 +92,22 @@ public class MainActivity extends Activity implements OnClickListener {
 	               }
 	           });
 	    //AlertDialog alert = builder.create();
-	    
+	   Å
 	    // If SD Card is available then open the config xml file and parse it
         if (mExternalStorageAvailable == 1) {
-        	File directory = Environment.getExternalStorageDirectory();
-        	
-        	File file = new File(directory + "/test.xml");
+        	*/
+        	//File directory = getAssets().open(fileName)
+        			//Environment.getExternalStorageDirectory();
+	         
+		
+		
+        //	File file = new File( "assets/MM.xml");
         	
         	InputStream in;
         	try {
         		ConfigurationParser parser = new ConfigurationParser();
-				in = new FileInputStream(file);
+				in = getAssets().open("MM.xml");
+        		//in = new FileInputStream(file);
 				ArrayList<ArrayList<Star>> gameConfiguration = parser.parse(in);
 				
 				return gameConfiguration;
@@ -116,7 +122,9 @@ public class MainActivity extends Activity implements OnClickListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-        }
+     //   }
+      
+      
 		return null;
 	}
 }

@@ -99,7 +99,7 @@ public class MusicAdapter extends BaseAdapter {
 		} else if (note.getDuration() == 0.046875) {
 			imageView.setImageResource(R.drawable.note3_64);
 		} else if (note.getDuration() == 0.0) {
-			imageView.setImageResource(R.drawable.ic_action_search);
+			imageView.setImageResource(R.drawable.qnote);
 		} else {
 			imageView.setImageResource(R.drawable.ic_launcher);
 		}

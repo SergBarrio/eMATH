@@ -27,12 +27,14 @@ public class activity2 extends TabActivity {
         
         TabHost tabHost = getTabHost();
         gameConfig = (ArrayList<ArrayList<Star>>)getIntent().getSerializableExtra("configuration");
+        
         // Tab level 1
         TabSpec level1spec = tabHost.newTabSpec("Level 1");
         // setting Title and Icon for the Tab
         level1spec.setIndicator("Level 1", getResources().getDrawable(R.drawable.icon_level_tab));
         Intent level1Intent = new Intent(this, level_1.class);
         // pass game configuration
+        
         level1Intent.putExtra("configuration", gameConfig);
         level1spec.setContent(level1Intent);
         

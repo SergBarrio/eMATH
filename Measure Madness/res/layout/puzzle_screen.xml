@@ -9,6 +9,13 @@
 	    android:layout_height="match_parent"
 	    android:gravity="right"
 	    android:orientation="vertical" >
+
+		<Button
+		    android:id="@+id/help"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="Hint" 
+		    android:onClick="onClickHelp"/>
 	
 	        <TextView
 	            android:id="@+id/star1"
@@ -65,23 +72,15 @@
 	            android:layout_height="wrap_content"
 	            android:gravity="right" >
 
-	            <Button
-	                android:id="@+id/playMusic"
-	                android:layout_width="95dp"
-	                android:layout_height="wrap_content"
-	                android:layout_marginRight="20dp"
-	                android:layout_marginBottom="25dp"
-	                android:onClick="onClickPlay"
-	                android:text="Play" />
+				<Button
+				    android:id="@+id/submit1"
+				    android:layout_width="95dp"
+				    android:layout_height="wrap_content"
+				    android:layout_marginBottom="25dp"
+				    android:layout_marginRight="110dp"
+				    android:onClick="onClickSubmit1"
+				    android:text="Submit" />
 
-	            <Button
-	                android:id="@+id/submit1"
-	                android:layout_width="95dp"
-	                android:layout_marginRight="55dp"
-	                android:layout_height="wrap_content"
-	                android:layout_marginBottom="25dp"
-	                android:onClick="onClickSubmit1"
-	                android:text="Submit" />
 	        </LinearLayout>
 	
 	        <TextView
@@ -92,6 +91,22 @@
 	            android:gravity="center"
 	            android:text="Question #2"
 	            android:textAppearance="?android:attr/textAppearanceLarge" />
+	        
+	        <TextView
+	            android:id="@+id/text2"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+				 android:text="Please press Play to answer this question." />
+
+	        <Button
+	            android:id="@+id/playMusic"
+	            android:layout_width="95dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginBottom="25dp"
+	            android:layout_marginRight="20dp"
+	            android:onClick="onClickPlay"
+	            android:layout_gravity="center"
+	            android:text="Play" />
 	
 	        <TextView
 	            android:id="@+id/question1"

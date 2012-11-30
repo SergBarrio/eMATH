@@ -10,7 +10,9 @@ import com.measure.madness.*;
 public class GameMethods {
 	
 	private int pressedPlay = 0;
-	
+	private int pressedSubmit1 = 0;
+	private int pressedSubmit2 = 0;
+	private int pressedSubmit3 = 0;
 	
 	public static void updateActiveState(Star star) {
 		star.setActive(true);
@@ -43,5 +45,45 @@ public class GameMethods {
 		pressedPlay += 1;
 	}
 	
+	// Check submit futton is enable
+	public boolean isSubmitEnable1(){
+		if (pressedSubmit1 >= 1)
+		{
+			return false;
+		}
+		return true;
+		
+	}
+	
+	public boolean isSubmitEnable2(){
+		
+		if (pressedSubmit2 >= 1)
+		{
+			return false;
+		}
+		
+		return true;
+		
+	}
+	
+	public boolean isSubmitEnable3(){
+		
+		if (pressedSubmit3 >= 1)
+		{
+			return false;
+		}
+		return true;
+		
+	}
+	
+	public void incrementPressedSubmit1(){
+		pressedSubmit1 += 1;
+	}
+	public void incrementPressedSubmit2(){
+		pressedSubmit1 += 1;
+	}
+	public void incrementPressedSubmit3(){
+		pressedSubmit1 += 1;
+	}
 
 }

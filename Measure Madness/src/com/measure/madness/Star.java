@@ -26,6 +26,7 @@ public class Star implements Serializable {
 	private Vector<Measure> sheetMusic = new Vector<Measure>();
 	private Vector<Note> musicAnswer = new Vector<Note>();
 	
+	
 	// Constructors //
 	public Star() {}
 	

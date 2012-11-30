@@ -49,4 +49,20 @@ public class level_1 extends Activity {
     	startActivity(intent);
     }
     
+    public void onClickPuzzle4(View v) {
+    	Intent intent = new Intent(this,puzzle_screen.class);
+    	if (gameConfig != null) {
+        	intent.putExtra("puzzle", gameConfig.get(3));    		
+    	}
+    	startActivity(intent);
+    }
+    
+    public void onClickPuzzle5(View v) {
+    	Intent intent = new Intent(this,puzzle_screen.class);
+    	if (gameConfig != null) {
+        	intent.putExtra("puzzle", gameConfig.get(4));    		
+    	}
+    	startActivity(intent);
+    }
+    
 }

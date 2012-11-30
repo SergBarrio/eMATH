@@ -27,6 +27,10 @@ public class Measure implements Serializable {
 			this.denominator = denominator;
 		}
 
+		public Tsig(String numerator2, String denominator2) {
+			// TODO Auto-generated constructor stub
+		}
+
 		// Getters and Setter for member variables //
 		public int getNumerator() {
 			return numerator;
