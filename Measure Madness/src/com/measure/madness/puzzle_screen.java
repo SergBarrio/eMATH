@@ -62,7 +62,7 @@ public class puzzle_screen extends Activity implements OnClickListener{
 	private final double[] noteDurations = {1.0,0.5,-0.5,0.25,-0.25,0.75,
 			-0.75,0.125,-0.125,0.375,0.0625,-0.0625,0.1875,0.03125,-0.03125,
 			0.09375,0.015625,-0.015625,0.046875,0.15};
-	private ArrayList<Star> puzzle = new ArrayList<Star>();
+	public ArrayList<Star> puzzle = new ArrayList<Star>();
 	private GameMethods game = new GameMethods();
 	
 	@SuppressWarnings("unchecked")

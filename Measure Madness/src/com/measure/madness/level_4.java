@@ -17,7 +17,7 @@ private ArrayList<ArrayList<Star>> gameConfig = new ArrayList<ArrayList<Star>>()
         
         // Obtain game configuration from activity2
         gameConfig = (ArrayList<ArrayList<Star>>)getIntent().getSerializableExtra("configuration");
-        System.out.println(gameConfig.size());
+        //System.out.println(gameConfig.size());
     }
     
     /* Puzzle selection buttons. Redirect to puzzle screen with appropriate object */

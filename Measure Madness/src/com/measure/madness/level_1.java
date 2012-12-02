@@ -20,7 +20,7 @@ public class level_1 extends Activity {
               
         // Obtain game configuration from activity2
         gameConfig = (ArrayList<ArrayList<Star>>)getIntent().getSerializableExtra("configuration");
-        System.out.println(gameConfig.size());
+        //System.out.println(gameConfig.size());
         //bar1.setRating(puzzle_screen.solved);
     }
     
