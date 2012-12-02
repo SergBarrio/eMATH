@@ -33,10 +33,10 @@
 	            
 	            <View
 	                android:id="@+id/timesig"
-	                android:layout_width="15dp"
-	                android:layout_height="wrap_content"
-	                android:layout_marginLeft="15dp"
-	                android:background="#ffffff"
+	                android:layout_width="30dp"
+	                android:layout_height="80dp"
+	                android:layout_marginLeft="0dp"
+	                android:background="@drawable/n44"
 	                />
 
 	            
@@ -184,7 +184,7 @@
 	            android:inputType="number"
 	            android:layout_marginBottom="10dp" >
 
-	            <requestFocus />
+	           
 	        </EditText>
 
 	        <Button

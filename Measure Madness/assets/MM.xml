@@ -5,10 +5,7 @@
             <type>0</type>
             <midi>supermario.mid</midi>
             <measure>
-                <tsig>
-                    <numerator>4</numerator>
-                    <denominator>4</denominator>
-                </tsig>
+
                 <note>
                     <staffposition>E</staffposition>
                     <duration>0.0625</duration>

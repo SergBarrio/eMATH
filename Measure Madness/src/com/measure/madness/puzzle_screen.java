@@ -78,20 +78,7 @@ public class puzzle_screen extends Activity implements OnClickListener{
         // get the puzzle from the calling activity
         puzzle = (ArrayList<Star>)getIntent().getExtras().getSerializable("puzzle");
         
-        // Set up time signature
-        linearLayout = (LinearLayout) findViewById(R.id.musiclayout);
-        
-        View view = findViewById(R.id.timesig);
-        
-        view = inflater.inflate(R.layout.time_signature_view, null);
-        
-        TextView timesig = (TextView) view.findViewById(R.id.numerator);
-        timesig.setText(String.valueOf(puzzle.get(0).getSheetMusic().get(0).getTimeSignature().getNumerator()));
-        timesig = (TextView) view.findViewById(R.id.denominator);
-        timesig.setText(String.valueOf(puzzle.get(0).getSheetMusic().get(0).getTimeSignature().getDenominator()));
-        
-        linearLayout.addView(view, 0);
- 
+     
         // set up the music representation with a galleryView. Pass all the measures that make up
      	// the music question to the MusicAdapter object, which populates the galleryView.
 		galleryView = (Gallery) findViewById(R.id.gallery1);
