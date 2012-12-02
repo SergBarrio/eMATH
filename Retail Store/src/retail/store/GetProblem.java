@@ -15,7 +15,7 @@ public class GetProblem {
 		private double upper;
 		private double lower;
 		
-		public Range(double upper, double lower) {
+		public Range(double lower, double upper) {
 			this.upper = upper;
 			this.lower = lower;
 		}
@@ -93,7 +93,6 @@ public class GetProblem {
 	}
 	
 	public Problem getProblem() {
-		int customer = 0;
 		Problem problem = new Problem();
 		try {
 			dataSource.open();
@@ -109,7 +108,7 @@ public class GetProblem {
 		
 		for (int i=0;i<categories.size();i++) {
 			Range range = ranges.get(categories.get(i));
-			int num = 1 + (int)(Math.random() *6);
+			int num = 2 + (int)(Math.random() * 5);
 			// Get a random number of items in category i
 			ArrayList<String> itemsPurchased = dataSource.getItems(num, categories.get(i));
 			ArrayList<Item> items = new ArrayList<Item>();

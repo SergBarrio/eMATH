@@ -6,11 +6,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,11 +54,6 @@ public class ProblemScreen extends Activity {
 	    customer4 = (ImageView)findViewById(R.id.cust_image4);
 	    customer5 = (ImageView)findViewById(R.id.cust_image5);
 	    
-	    // right now there are 3 placeholder images in the layout
-	    // I made it so that the linearlayout has a weightSum of 100
-	    // to place items make sure the vertical linearLayout (rows not columns)
-	    // have equal weight. So to find the weight for 6 items, 100/6 = 16.66 on each layout
-	    
 	    submitbutton = (Button)findViewById(R.id.submitbutton);
 	    submitbutton.setOnClickListener(submit_pressed);
 	    
@@ -77,6 +74,13 @@ public class ProblemScreen extends Activity {
 	    	TextView item = (TextView)findViewById(itemIDs[i]);
 	    	double price = Double.parseDouble(df.format(curr_problem.get(i).getPrice()));
 	    	int quantity = curr_problem.get(i).getQuantity();
+	    	
+	    	// I made it so that the linearlayout has a weightSum of 100
+		    // to place items make sure the vertical linearLayout (rows not columns)
+		    // have equal weight. So to find the weight for 6 items, 100/6 = 16.66 on each layout
+	    	float weight = 100/(curr_problem.size()-1);
+	    	item.setLayoutParams(new TableLayout.LayoutParams(
+	    			LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, weight));
 	    	
 	    	item.setText(curr_problem.get(i).getName() 
 	    	+ "\n$" + price 
@@ -123,6 +127,7 @@ public class ProblemScreen extends Activity {
 						num_correct++;
 						showToast(true, true);
 					} else { showToast(true, false); }
+					answerbox.setText("");
 				}else{
 					//we want to give the user a chance to answer
 					showToast(false, false);
@@ -143,6 +148,7 @@ public class ProblemScreen extends Activity {
 						num_correct++;
 						showToast(true, true);
 					} else { showToast(true, false); }
+					answerbox.setText("");
 				}else{
 					//we want to give the user a chance to answer
 					showToast(false, false);
@@ -163,6 +169,7 @@ public class ProblemScreen extends Activity {
 						num_correct++;
 						showToast(true, true);
 					} else { showToast(true, false); }
+					answerbox.setText("");
 				}else{
 					//we want to give the user a chance to answer
 					showToast(false, false);
@@ -183,6 +190,7 @@ public class ProblemScreen extends Activity {
 						num_correct++;
 						showToast(true, true);
 					} else { showToast(true, false); }
+					answerbox.setText("");
 				}else{
 					//we want to give the user a chance to answer
 					showToast(false, false);
@@ -202,6 +210,7 @@ public class ProblemScreen extends Activity {
 					num_correct++;
 					showToast(true, true);
 				} else { showToast(true, false); }
+				answerbox.setText("");
 			}else{
 				//we want to give the user a chance to answer
 				showToast(false, false);
@@ -217,4 +226,8 @@ public class ProblemScreen extends Activity {
 			
 		}
 	 };
+	 
+	 //disable back button
+	 @Override
+	 public void onBackPressed() { }
 }

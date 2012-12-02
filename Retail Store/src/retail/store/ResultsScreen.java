@@ -42,4 +42,8 @@ public class ResultsScreen extends Activity implements OnClickListener{
 			startActivity(i);
 		}
 	}
+	
+	//disable back button
+	@Override
+	public void onBackPressed() { }
 }
