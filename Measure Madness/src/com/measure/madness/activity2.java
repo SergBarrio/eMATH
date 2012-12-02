@@ -26,6 +26,7 @@ public class activity2 extends TabActivity {
         setContentView(R.layout.activity_2);
         
         TabHost tabHost = getTabHost();
+        tabHost.setup();
         gameConfig = (ArrayList<ArrayList<Star>>)getIntent().getSerializableExtra("configuration");
         
         // Tab level 1
@@ -64,6 +65,7 @@ public class activity2 extends TabActivity {
         // pass game configuration
         level4Intent.putExtra("configuration", gameConfig);
         level4spec.setContent(level4Intent);
+        
         
         tabHost.addTab(level1spec);
         tabHost.addTab(level2spec);

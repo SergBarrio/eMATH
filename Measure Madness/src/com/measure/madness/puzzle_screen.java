@@ -24,6 +24,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -44,7 +45,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class puzzle_screen extends Activity {
+
+public class puzzle_screen extends Activity implements OnClickListener{
+	static int checkSubmit=0;
 	int star =0;
 	final String NAME = "name";
     final String IMAGE = "image";
@@ -55,6 +58,7 @@ public class puzzle_screen extends Activity {
 	public static int solved = 0;
 	private EditText userAnswer;
 	Spinner spinner;
+	Button finish_button;
 	private final double[] noteDurations = {1.0,0.5,-0.5,0.25,-0.25,0.75,
 			-0.75,0.125,-0.125,0.375,0.0625,-0.0625,0.1875,0.03125,-0.03125,
 			0.09375,0.015625,-0.015625,0.046875,0.15};
@@ -91,6 +95,9 @@ public class puzzle_screen extends Activity {
         // set up the music representation with a galleryView. Pass all the measures that make up
      	// the music question to the MusicAdapter object, which populates the galleryView.
 		galleryView = (Gallery) findViewById(R.id.gallery1);
+		
+		finish_button = (Button) findViewById(R.id.finished);
+		finish_button.setOnClickListener(this);
 		
 		for (int i=0; i<puzzle.get(0).getSheetMusic().size(); i++) {
 			galleryView.setAdapter(new MusicAdapter(this, puzzle.get(0).getSheetMusic().get(i).getMeasure()));
@@ -166,9 +173,9 @@ public class puzzle_screen extends Activity {
 			return R.drawable.note3_64;
 		} else if (note == 0.0) {
 			return R.drawable.qnote;
-		} else if (note == 0.15) {
-			return R.drawable.n44;
-		} else {
+		} //else if (note == 0.15) {
+			//return R.drawable.n44;
+		/*}*/ else {
 			return R.drawable.ic_action_search;
 		}
 	}
@@ -208,13 +215,8 @@ public class puzzle_screen extends Activity {
 		}
 		game.incrementPressedPlay();
 	}
-	
-	
-	
-	
-	// Verify question 1 when user clicks submit
-	
-	
+			
+	// Verify question 1 when user clicks submit	
 	public void onClickSubmit1(View v) {
 		// TODO Auto-generated method stub
 		boolean correct = false;
@@ -257,8 +259,8 @@ public class puzzle_screen extends Activity {
 		        Toast.LENGTH_SHORT).show();
 		Button myButton = (Button)findViewById(R.id.submit1);
 		myButton.setEnabled(false);
-		
-		
+		//checkSubmit++;
+		//onClickFinish();
 	}
 	
 	
@@ -291,9 +293,9 @@ public class puzzle_screen extends Activity {
 			star = star + 1;
 		}
 		Button myButton = (Button)findViewById(R.id.submit2);
-		myButton.setEnabled(false);
-		
-
+		myButton.setEnabled(false);		
+		//checkSubmit++;
+		//onClickFinish();
 	}
 	
 	// Verify question 3 when user clicks submit
@@ -311,13 +313,10 @@ public class puzzle_screen extends Activity {
 		        Toast.LENGTH_SHORT).show();
 		Button myButton = (Button)findViewById(R.id.submit3);
 		myButton.setEnabled(false);
-		
-		
 	}
+	
 	public void onClickHelp(View v)
 	{
-		
-         
         Toast ImageToast = new Toast(getBaseContext());
         LinearLayout toastLayout = new LinearLayout(getBaseContext());
         toastLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -329,15 +328,16 @@ public class puzzle_screen extends Activity {
         toastLayout.addView(text);
         ImageToast.setView(toastLayout);
         ImageToast.setDuration(Toast.LENGTH_LONG);
-        ImageToast.show();
-		
+        ImageToast.show();		
 	}
 	
 	public void onClickFinish(View V)
 	{		
-		Intent myIntent = new Intent(this, activity2.class);
-		//myIntent.putExtra("star", star);
-		startActivity(myIntent);
+		if(V == finish_button){
+			Intent myIntent = new Intent(this, activity2.class);
+			//myIntent.putExtra("star", star);
+			startActivity(myIntent);
+		}
 	}
 	
 	// I was trying to determine how to check when the active status should be changed.
@@ -345,6 +345,15 @@ public class puzzle_screen extends Activity {
 	private void checkSolved() {
 		if (solved >= 3) {
 			game.updateActiveState(puzzle.get(0));
+		}
+	}
+
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v == finish_button){
+			Intent myIntent = new Intent(this, activity2.class);
+			//myIntent.putExtra("star", star);
+			startActivity(myIntent);
 		}
 	}
 }

@@ -196,5 +196,11 @@
 	            android:onClick="onClickSubmit3"
 	            android:text="Submit" />
 
+	        <Button
+	            android:id="@+id/finished"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Finished" />
+
 	</LinearLayout>
 </ScrollView>
