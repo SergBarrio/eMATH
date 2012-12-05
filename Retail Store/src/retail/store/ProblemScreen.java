@@ -1,5 +1,7 @@
 package retail.store;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,19 +14,33 @@ public class ProblemScreen extends Activity {
 
 	Button submitbutton;
 	ImageView customer1, customer2, customer3, customer4, customer5;
+	private ArrayList<Item> items;
+	private TextView item_tv;
+	private int remaining_items = 0;
+	private static int[] item_text_ids = {
+		R.id.item1,
+		R.id.item2,
+		R.id.item3,
+		R.id.item4,
+		R.id.item5,
+		R.id.item6 };
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	    setContentView(R.layout.problem_screen);
-	    
-	    TextView item = (TextView)findViewById(R.id.item_name_cost);
-	    
-	    String item_ident = "Customer #...";
-	    
+	    setContentView(R.layout.problem_screen);    
+	    items = (ArrayList<Item>)getIntent().getExtras().getSerializable("purchases");
+	    TextView item = (TextView)findViewById(R.id.item_name_cost);    
+	    String item_ident = "Customer #...";    
 	    item.setText(item_ident);
 	    
+	    for(int i=0; i<items.size(); i++){
+	    	item_tv = (TextView)findViewById(item_text_ids[i]);
+	    	item_tv.setText(items.get(i).getName(), null);
+	    }
+	    
 	    //set items
+	    /*
 	    TextView item1 = (TextView)findViewById(R.id.item1);
 	    TextView item2 = (TextView)findViewById(R.id.item2);
 	    TextView item3 = (TextView)findViewById(R.id.item3);
@@ -38,10 +54,11 @@ public class ProblemScreen extends Activity {
 	    item4.setText("Soda", null);
 	    item5.setText("Gloves", null);
 	    item6.setText("Apple", null);
+	    */
 	    
 	    //set top drawable for items
-	    item4.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.water_small, 0, 0);
-	    item5.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.shirt, 0, 0);
+	    //item4.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.water_small, 0, 0);
+	    //item5.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.shirt, 0, 0);
 	    
 	    //set customer queue
 	    customer1 = (ImageView)findViewById(R.id.cust_image1);

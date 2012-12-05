@@ -10,5 +10,6 @@
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
     <string name="start">Start</string>
+    <string name="activity_splash">Retail Store</string>
 
 </resources>
