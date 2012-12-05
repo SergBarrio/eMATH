@@ -34,15 +34,19 @@ public final class R {
         public static final int pad=0x7f02000e;
         public static final int plus_button=0x7f02000f;
         public static final int shazz_drawing=0x7f020010;
-        public static final int tiled_main_background=0x7f020011;
-        public static final int tiled_order_background=0x7f020012;
-        public static final int zoom_in=0x7f020013;
-        public static final int zoom_in_pressed=0x7f020014;
-        public static final int zoom_out=0x7f020015;
-        public static final int zoom_out_pressed=0x7f020016;
+        public static final int silver_spoon=0x7f020011;
+        public static final int splash_background=0x7f020012;
+        public static final int text=0x7f020013;
+        public static final int tiled_main_background=0x7f020014;
+        public static final int tiled_order_background=0x7f020015;
+        public static final int zoom_in=0x7f020016;
+        public static final int zoom_in_pressed=0x7f020017;
+        public static final int zoom_out=0x7f020018;
+        public static final int zoom_out_pressed=0x7f020019;
     }
     public static final class id {
         public static final int button=0x7f09002a;
+        public static final int button1=0x7f09002b;
         public static final int cup1=0x7f09000b;
         public static final int cup1_size=0x7f090009;
         public static final int cup1_text=0x7f09000d;
@@ -63,7 +67,7 @@ public final class R {
         public static final int imageView2=0x7f090026;
         public static final int imageView3=0x7f090028;
         public static final int medium=0x7f09001f;
-        public static final int menu_settings=0x7f09002b;
+        public static final int menu_settings=0x7f09002c;
         public static final int minus_cup1=0x7f09000f;
         public static final int minus_cup2=0x7f090011;
         public static final int minus_cup3=0x7f090019;
@@ -92,6 +96,7 @@ public final class R {
         public static final int problem_screen=0x7f030001;
         public static final int restaurant_main=0x7f030002;
         public static final int results_screen=0x7f030003;
+        public static final int splash_screen=0x7f030004;
     }
     public static final class menu {
         public static final int activity_main=0x7f080000;
@@ -101,12 +106,13 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
-        public static final int difficulty_title=0x7f050006;
+        public static final int difficulty_title=0x7f050007;
         public static final int menu_settings=0x7f050001;
         public static final int title_activity_main=0x7f050002;
-        public static final int title_order_list=0x7f050003;
-        public static final int title_problem_screen=0x7f050004;
-        public static final int title_results_screen=0x7f050005;
+        public static final int title_order_list=0x7f050004;
+        public static final int title_problem_screen=0x7f050005;
+        public static final int title_restaurant_main=0x7f050003;
+        public static final int title_results_screen=0x7f050006;
     }
     public static final class style {
         public static final int AppTheme=0x7f070000;

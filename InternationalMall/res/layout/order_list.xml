@@ -24,7 +24,8 @@
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="16dp"
-        android:drawablePadding="5dp"/>
+        android:drawablePadding="5dp"
+        android:textColor="@drawable/text" />
 
     <TextView
         android:id="@+id/recipe_item_2"
@@ -33,7 +34,8 @@
         android:layout_alignLeft="@+id/recipe_item_1"
         android:layout_below="@+id/recipe_item_1"
         android:layout_marginTop="16dp"
-        android:drawablePadding="5dp"/>
+        android:drawablePadding="5dp"
+        android:textColor="@drawable/text" />
 
     <TextView
         android:id="@+id/recipe_item_3"
@@ -42,7 +44,8 @@
         android:layout_alignLeft="@+id/recipe_item_2"
         android:layout_below="@+id/recipe_item_2"
         android:layout_marginTop="16dp"
-        android:drawablePadding="5dp"/>
+        android:drawablePadding="5dp"
+        android:textColor="@drawable/text" />
 
     <TextView
         android:id="@+id/recipe_item_4"
@@ -51,7 +54,8 @@
         android:layout_alignLeft="@+id/recipe_item_3"
         android:layout_below="@+id/recipe_item_3"
         android:layout_marginTop="16dp"
-        android:drawablePadding="5dp"/>
+        android:drawablePadding="5dp"
+        android:textColor="@drawable/text" />
 
     <TextView
         android:id="@+id/recipe_item_5"
@@ -60,7 +64,8 @@
         android:layout_alignLeft="@+id/recipe_item_4"
         android:layout_below="@+id/recipe_item_4"
         android:layout_marginTop="16dp"
-        android:drawablePadding="5dp"/>
+        android:drawablePadding="5dp"
+        android:textColor="@drawable/text" />
     
     <TextView
         android:id="@+id/recipe_item_6"
@@ -69,6 +74,7 @@
         android:layout_alignLeft="@+id/recipe_item_5"
         android:layout_below="@+id/recipe_item_5"
         android:layout_marginTop="16dp"
-        android:drawablePadding="5dp"/>
+        android:drawablePadding="5dp"
+        android:textColor="@drawable/text" />
 
 </RelativeLayout>
