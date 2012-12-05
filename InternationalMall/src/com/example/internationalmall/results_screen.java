@@ -48,7 +48,9 @@ public class results_screen extends Activity implements OnClickListener{
         	for (int j=0; j<options.get(i).get(j); j++) {
         		avg_options += (double)options.get(i).get(j)/4.0;
         	}
+        	avg_options = avg_options/options.get(i).size();
         }
+        avg_options = avg_options/options.size();
         
         options_used = (TextView)findViewById(R.id.options_used);
         options_used.setText(String.valueOf((int)(avg_options*100)) + "% options used");
